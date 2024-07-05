@@ -6,7 +6,7 @@ import { FaTwitter, FaFacebook, FaGithub, FaInstagram } from 'react-icons/fa';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-gray-100 text-gray-700 py-6">
+    <footer className="bg-white text-gray-700 py-6">
       <div className="container mx-auto text-center px-4">
         <div className="mb-4">
           <a href="/" className="text-purple-500 text-xl font-bold">TravelWithMAS</a>

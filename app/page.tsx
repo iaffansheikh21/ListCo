@@ -1,6 +1,10 @@
 import { Component } from "react";
 import Navbar from "./components/NavBar";
 import Footer from "./components/Footer";
+import TopCities from "./components/TopCitites";
+import NewDirectory from "./components/NewDirectory";
+import PopularDirectory from "./components/PopularDirectory";
+import HowItWorks from "./components/HowItWorks";
 
 
 
@@ -8,7 +12,10 @@ const Home: React.FC = () => {
     return (
         <div>
             <Navbar />
-            <h1>Home</h1>
+            <TopCities/>
+            <PopularDirectory/>
+            <HowItWorks />
+            <NewDirectory/>
             
             {/* <Footer/> */}
 

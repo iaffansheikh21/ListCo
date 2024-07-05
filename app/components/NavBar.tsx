@@ -30,7 +30,7 @@ const Navbar: React.FC = () => {
       className="bg-cover bg-center text-white"
       style={{ backgroundImage: 'url("/h1_hero.png.webp")' }}
     >
-      <nav className="flex flex-col md:flex-row justify-between items-center py-4 px-8 text-white bg-opacity-70 bg-slate-800">
+      <nav className=" sticky top-0 z-0 flex flex-col md:flex-row justify-between items-center py-4 px-8 text-white bg-opacity-70 bg-slate-800">
         <div className="mb-4 md:mb-0">
           <Image src="/logo.svg" alt="logo" width={230} height={230} />
         </div>
