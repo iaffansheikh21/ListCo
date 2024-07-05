@@ -1,3 +1,4 @@
+// components/NavBar.tsx
 "use client"
 import Link from 'next/link';
 import Image from 'next/image';
@@ -25,10 +26,13 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <>
-      <nav className="flex flex-col md:flex-row justify-between items-center py-4 px-8 text-white md:bg-transparent" style={{ backgroundColor: '#1E293B' }}>
+    <div
+      className="bg-cover bg-center text-white"
+      style={{ backgroundImage: 'url("/h1_hero.png.webp")' }}
+    >
+      <nav className="flex flex-col md:flex-row justify-between items-center py-4 px-8 text-white bg-opacity-70 bg-slate-800">
         <div className="mb-4 md:mb-0">
-          <Image src="/logo.svg" alt="logo" width={180} height={180} />
+          <Image src="/logo.svg" alt="logo" width={230} height={230} />
         </div>
         <div className="flex flex-col md:flex-row md:space-x-4 space-y-2 md:space-y-0">
           <Link href="/" passHref>
@@ -93,16 +97,16 @@ const Navbar: React.FC = () => {
         </div>
       </nav>
 
-      <section className="flex justify-center items-center h-64 bg-slate-800">
-        <div className="flex space-x-2 w-full max-w-xl">
+      <section className="flex justify-center items-center h-64 bg-opacity-70 bg-slate-800 px-4">
+        <div className="flex flex-col md:flex-row md:space-x-2 w-full max-w-xl">
           <input
             type="text"
-            className="flex-grow py-2 px-4 rounded-l-md rounded-r-md border border-gray-700 focus:outline-none"
+            className="flex-grow py-2 px-4 rounded-md border border-gray-700 focus:outline-none focus:ring-2 focus:ring-cyan-500"
             placeholder="What are you finding?"
           />
-          <div className="relative">
+          <div className="relative mt-2 md:mt-0">
             <button
-              className="py-2 px-4 bg-white border border-gray-700 rounded-r-md rounded-l-md flex items-center"
+              className="py-2 px-4 bg-white border border-gray-700 rounded-md flex items-center focus:outline-none focus:ring-2 focus:ring-cyan-500"
               onClick={toggleCategories}
             >
               <span className="mr-2">
@@ -111,7 +115,7 @@ const Navbar: React.FC = () => {
               <FontAwesomeIcon icon={faCaretDown} />
             </button>
             {showCategories && (
-              <div className="absolute left-0 mt-2 w-full bg-white text-black rounded-l-md rounded-r-md shadow-lg">
+              <div className="absolute left-0 mt-2 w-full bg-white text-black rounded-md shadow-lg">
                 <a href="#" className="block px-4 py-2 hover:bg-gray-300 hover:text-cyan-700">Category 1</a>
                 <a href="#" className="block px-4 py-2 hover:bg-gray-300 hover:text-cyan-700">Category 2</a>
                 <a href="#" className="block px-4 py-2 hover:bg-gray-300 hover:text-cyan-700">Category 3</a>
@@ -119,13 +123,13 @@ const Navbar: React.FC = () => {
               </div>
             )}
           </div>
-          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-r-md rounded-l-md  flex items-center">
+          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md flex items-center mt-2 md:mt-0">
             <FontAwesomeIcon icon={faSearch} className="mr-2" />
             Search
           </button>
         </div>
       </section>
-    </>
+    </div>
   );
 };
 

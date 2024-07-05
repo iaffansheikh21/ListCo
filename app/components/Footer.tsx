@@ -7,9 +7,9 @@ import { FaTwitter, FaFacebook, FaGithub, FaInstagram } from 'react-icons/fa';
 const Footer: React.FC = () => {
   return (
     <footer className="bg-gray-100 text-gray-700 py-6">
-      <div className="container mx-auto text-center">
+      <div className="container mx-auto text-center px-4">
         <div className="mb-4">
-          <a href="#" className="text-purple-500 text-xl font-bold">TravelWithMAS</a>
+          <a href="/" className="text-purple-500 text-xl font-bold">TravelWithMAS</a>
           <p className="text-sm mt-2">
             Users and submit their own items. You can create different packages and by connecting
             with your PayPal or Stripe account charge users for registration to your directory portal.
@@ -29,12 +29,16 @@ const Footer: React.FC = () => {
             <FaInstagram size={24} />
           </a>
         </div>
-        <div className="text-sm text-gray-500">
-          <p>
-            <Link href="/" legacyBehavior><a className="hover:underline">Home</a></Link> | 
-            <Link href="/Categories" legacyBehavior><a className="hover:underline">Categories</a></Link> | 
-            <Link href="/pages" legacyBehavior><a className="hover:underline">Pages</a></Link> | 
-            <Link href="/blog" legacyBehavior><a className="hover:underline">Blog</a></Link> | 
+        <div className="text-sm text-gray-500 mb-4">
+          <p className="space-y-2 md:space-y-0 md:flex md:justify-center md:space-x-2">
+            <Link href="/" legacyBehavior><a className="hover:underline">Home</a></Link>
+            <span>|</span>
+            <Link href="/Categories" legacyBehavior><a className="hover:underline">Categories</a></Link>
+            <span>|</span>
+            <Link href="/pages" legacyBehavior><a className="hover:underline">Pages</a></Link>
+            <span>|</span>
+            <Link href="/blog" legacyBehavior><a className="hover:underline">Blog</a></Link>
+            <span>|</span>
             <Link href="/contact" legacyBehavior><a className="hover:underline">Contact</a></Link>
           </p>
         </div>

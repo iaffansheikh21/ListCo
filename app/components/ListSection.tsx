@@ -4,9 +4,9 @@ import Link from 'next/link';
 const ListSection = () => {
   return (
     <div className="container mx-auto p-4">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Sidebar */}
-        <div className="md:col-span-1">
+        <div className="lg:col-span-1">
           <div className="bg-white p-4 shadow rounded">
             <h2 className="text-xl font-semibold mb-4">Advanced Filter</h2>
             <div className="mb-4">
@@ -18,7 +18,6 @@ const ListSection = () => {
                 <option value="Balochistan">Balochistan</option>
                 <option value="Kpk">Kpk</option>
                 <option value="Gilgit Baltistan">Gilgit Baltistan</option>
-                {/* Add more options as needed */}
               </select>
             </div>
             <div className="mb-4">
@@ -31,8 +30,6 @@ const ListSection = () => {
                 <option value="Islamabad">Islamabad</option>
                 <option value="Rawalpindi">Rawalpindi</option>
                 <option value="Multan">Multan</option>
-
-                {/* Add more options as needed */}
               </select>
             </div>
             <div className="mb-4">
@@ -43,7 +40,6 @@ const ListSection = () => {
                 <option>3 km</option>
                 <option>4 km</option>
                 <option>5 km</option>
-                {/* Add more options as needed */}
               </select>
             </div>
             <div className="mb-4">
@@ -69,8 +65,6 @@ const ListSection = () => {
                   <input type="checkbox" className="form-checkbox" />
                   <span className="ml-2">$250 - $300</span>
                 </label>
-                
-                {/* Add more checkboxes as needed */}
               </div>
             </div>
             <div className="mb-4">
@@ -96,14 +90,13 @@ const ListSection = () => {
                   <input type="checkbox" className="form-checkbox" />
                   <span className="ml-2">Coupons</span>
                 </label>
-                {/* Add more checkboxes as needed */}
               </div>
             </div>
           </div>
         </div>
 
         {/* Listings */}
-        <div className="md:col-span-2">
+        <div className="lg:col-span-2">
           <h2 className="text-xl font-semibold mb-4">5432 Listings are available</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {/* Single listing item */}
