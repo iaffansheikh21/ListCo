@@ -6,11 +6,11 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 const directories = [
-  { name: 'Urban areas1', description: "Let's uncover the best places to eat, drink", category: 'Food & Restaurant', image: '/properties1.png' },
-  { name: 'Urban areas2', description: "Let's uncover the best places to eat, drink", category: 'Food & Restaurant', image: '/properties2.png' },
-  { name: 'Urban areas3', description: "Let's uncover the best places to eat, drink", category: 'Food & Restaurant', image: '/properties3.png' },
-  { name: 'Urban areas4', description: "Let's uncover the best places to eat, drink", category: 'Food & Restaurant', image: '/properties2.png' },
-  { name: 'Urban areas5', description: "Let's uncover the best places to eat, drink", category: 'Food & Restaurant', image: '/properties3.png' },
+  { name: 'Urban Areas1', description: "Let's uncover the best places to eat, drink", category: 'Food & Restaurant', image: '/properties1.png' },
+  { name: 'Urban Areas2', description: "Let's uncover the best places to eat, drink", category: 'Food & Restaurant', image: '/properties2.png' },
+  { name: 'Urban Areas3', description: "Let's uncover the best places to eat, drink", category: 'Food & Restaurant', image: '/properties3.png' },
+  { name: 'Urban Areas4', description: "Let's uncover the best places to eat, drink", category: 'Food & Restaurant', image: '/properties2.png' },
+  { name: 'Urban Areas5', description: "Let's uncover the best places to eat, drink", category: 'Food & Restaurant', image: '/properties3.png' },
 ];
 
 const PopularDirectory: React.FC = () => {
@@ -62,16 +62,18 @@ const PopularDirectory: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         <Slider ref={sliderRef} {...settings}>
           {directories.map((directory, index) => (
-            <div key={index} className="flex-shrink-0 w-80 group">
-              <div className="relative overflow-hidden">
-                <img src={"/properties1.png"} alt={directory.name} className="w-full h-48 object-cover rounded-lg transform transition-transform duration-300 group-hover:scale-110" />
-                <div className="absolute top-0 left-0 bg-black bg-opacity-50 text-white rounded-tr-lg rounded-bl-lg px-4 py-2">$$$</div>
-                <div className="absolute top-0 right-0 bg-black bg-opacity-50 text-white rounded-tl-lg rounded-br-lg px-4 py-2">CLOSED</div>
-              </div>
-              <div className="mt-4 text-center">
-                <h3 className="text-xl font-semibold">{directory.name}</h3>
-                <p className="text-gray-600">{directory.description}</p>
-                <div className="mt-2 text-orange-600">{directory.category}</div>
+            <div key={index} className="px-4">
+              <div className="flex-shrink-0 w-full group border rounded-lg overflow-hidden shadow-lg">
+                <div className="relative overflow-hidden">
+                  <img src={"/properties1.png"} alt={directory.name} className="w-full h-48 object-cover transform transition-transform duration-300 group-hover:scale-110" />
+                  <div className="absolute top-0 left-0 bg-black bg-opacity-50 text-white rounded-tr-lg rounded-bl-lg px-4 py-2">$$$</div>
+                  <div className="absolute top-0 right-0 bg-black bg-opacity-50 text-white rounded-tl-lg rounded-br-lg px-4 py-2">CLOSED</div>
+                </div>
+                <div className="p-4 text-center">
+                  <h3 className="text-xl font-semibold">{directory.name}</h3>
+                  <p className="text-gray-600">{directory.description}</p>
+                  <div className="mt-2 text-orange-600">{directory.category}</div>
+                </div>
               </div>
             </div>
           ))}
