@@ -1,5 +1,7 @@
 import Navbar from "../components/NavBar";
 import AdvancedFilter from "../components/AdvancedFilter";
+import Footer from "../components/Footer";
+import ListSection from "../components/ListSection";
 
 
 
@@ -7,9 +9,9 @@ const Categories: React.FC = () => {
     return (
         <div>
             <Navbar />
-            <h1>Categories</h1>
-            <AdvancedFilter />
+            {/* <AdvancedFilter /> */}
             {/* Rest of your page content */}
+            <ListSection/>
         </div>
     );
 };

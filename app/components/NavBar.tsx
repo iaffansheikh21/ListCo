@@ -28,7 +28,7 @@ const Navbar: React.FC = () => {
     <>
       <nav className="flex flex-col md:flex-row justify-between items-center py-4 px-8 text-white md:bg-transparent" style={{ backgroundColor: '#1E293B' }}>
         <div className="mb-4 md:mb-0">
-          <Image src="/logo.svg" alt="logo" width={220} height={220} />
+          <Image src="/logo.svg" alt="logo" width={180} height={180} />
         </div>
         <div className="flex flex-col md:flex-row md:space-x-4 space-y-2 md:space-y-0">
           <Link href="/" passHref>
