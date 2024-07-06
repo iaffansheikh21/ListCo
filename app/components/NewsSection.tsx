@@ -8,7 +8,7 @@ const NewsSection: React.FC = () => {
     <section className="bg-white py-12">
       <div className="container mx-auto text-center">
         <h2 className="text-3xl font-semibold text-gray-800">News & Updates</h2>
-        <p className="text-gray-600 mb-8">Lets uncover the best places to eat, drink, and shop nearest to you.</p>
+        <p className="text-gray-600 mb-8">Let&apos;s uncover the best places to eat, drink, and shop nearest to you.</p>
         <div className="flex flex-wrap justify-center space-y-6 md:space-y-0 md:space-x-6">
           <div className="max-w-xs bg-white rounded-lg shadow-md overflow-hidden transition-transform transform hover:scale-105">
             <Image

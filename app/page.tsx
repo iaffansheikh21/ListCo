@@ -13,7 +13,7 @@ import HowItWorks from "./components/HowItWorks";
 const Home: React.FC = () => {
     return (
         <div>
-            <Navbar />
+            <Navbar /> 
             <TopCities/>
             <PopularDirectory/>
             <HowItWorks />

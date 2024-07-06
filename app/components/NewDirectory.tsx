@@ -6,11 +6,11 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 const directories = [
-  { name: 'Urban Areas1', description: "Let's uncover the best places to eat, drink", category: 'Food & Restaurant', image: '/newDirectory1.png' },
-  { name: 'Urban Areas2', description: "Let's uncover the best places to eat, drink", category: 'Food & Restaurant', image: '/newDirectory2.png' },
-  { name: 'Urban Areas3', description: "Let's uncover the best places to eat, drink", category: 'Food & Restaurant', image: '/newDirectory3.png' },
-  { name: 'Urban Areas4', description: "Let's uncover the best places to eat, drink", category: 'Food & Restaurant', image: '/newDirectory2.png' },
-  { name: 'Urban Areas5', description: "Let's uncover the best places to eat, drink", category: 'Food & Restaurant', image: '/newDirectory3.png' },
+  { name: 'Urban Areas1', description: "Let&apos;s uncover the best places to eat, drink", category: 'Food & Restaurant', image: '/newDirectory1.png' },
+  { name: 'Urban Areas2', description: "Let&apos;s uncover the best places to eat, drink", category: 'Food & Restaurant', image: '/newDirectory2.png' },
+  { name: 'Urban Areas3', description: "Let&apos;s uncover the best places to eat, drink", category: 'Food & Restaurant', image: '/newDirectory3.png' },
+  { name: 'Urban Areas4', description: "Let&apos;s uncover the best places to eat, drink", category: 'Food & Restaurant', image: '/newDirectory2.png' },
+  { name: 'Urban Areas5', description: "Let&apos;s uncover the best places to eat, drink", category: 'Food & Restaurant', image: '/newDirectory3.png' },
 ];
 
 const NewDirectory: React.FC = () => {
@@ -57,7 +57,7 @@ const NewDirectory: React.FC = () => {
     <section className="py-12">
       <div className="text-center mb-8">
         <h2 className="text-3xl font-bold">New Directory</h2>
-        <p className="text-gray-600">Lets uncover the best places to eat, drink, and shop nearest to you.</p>
+        <p className="text-gray-600">Let&apos;s uncover the best places to eat, drink, and shop nearest to you.</p>
       </div>
       <div className="max-w-7xl mx-auto">
         <Slider ref={sliderRef} {...settings}>

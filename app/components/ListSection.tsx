@@ -116,7 +116,7 @@ const ListSection = () => {
               <div className="p-4">
                 <h3 className="text-lg font-semibold">Urban areas</h3>
                 <p className="text-gray-600">
-                  Lets uncover the best places to eat, drink
+                  Let&apos;s uncover the best places to eat, drink
                 </p>
                 <p className="mt-2 text-sm text-gray-500">Food & Restaurant</p>
               </div>
@@ -138,7 +138,7 @@ const ListSection = () => {
               <div className="p-4">
                 <h3 className="text-lg font-semibold">Urban areas</h3>
                 <p className="text-gray-600">
-                  Lets uncover the best places to eat, drink
+                  Let&apos;s uncover the best places to eat, drink
                 </p>
                 <p className="mt-2 text-sm text-gray-500">Food & Restaurant</p>
               </div>
@@ -159,7 +159,7 @@ const ListSection = () => {
               <div className="p-4">
                 <h3 className="text-lg font-semibold">Urban areas</h3>
                 <p className="text-gray-600">
-                  Lets uncover the best places to eat, drink
+                  Let&apos;s uncover the best places to eat, drink
                 </p>
                 <p className="mt-2 text-sm text-gray-500">Food & Restaurant</p>
               </div>
@@ -180,7 +180,7 @@ const ListSection = () => {
               <div className="p-4">
                 <h3 className="text-lg font-semibold">Urban areas</h3>
                 <p className="text-gray-600">
-                  Lets uncover the best places to eat, drink
+                  Let&apos;s uncover the best places to eat, drink
                 </p>
                 <p className="mt-2 text-sm text-gray-500">Food & Restaurant</p>
               </div>
@@ -201,7 +201,7 @@ const ListSection = () => {
               <div className="p-4">
                 <h3 className="text-lg font-semibold">Urban areas</h3>
                 <p className="text-gray-600">
-                  Lets uncover the best places to eat, drink
+                  Let&apos;s uncover the best places to eat, drink
                 </p>
                 <p className="mt-2 text-sm text-gray-500">Food & Restaurant</p>
               </div>
@@ -222,7 +222,7 @@ const ListSection = () => {
               <div className="p-4">
                 <h3 className="text-lg font-semibold">Urban areas</h3>
                 <p className="text-gray-600">
-                  Lets uncover the best places to eat, drink
+                  Let&apos;s uncover the best places to eat, drink
                 </p>
                 <p className="mt-2 text-sm text-gray-500">Food & Restaurant</p>
               </div>

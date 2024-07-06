@@ -2,39 +2,68 @@
 "use client"
 import Link from 'next/link';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSignInAlt, faSearch, faCaretDown } from '@fortawesome/free-solid-svg-icons';
+import { faSignInAlt, faSearch, faCaretDown, faBars } from '@fortawesome/free-solid-svg-icons';
 
 const Navbar: React.FC = () => {
   const [isBlogOpen, setBlogOpen] = useState(false);
   const [isPagesOpen, setPagesOpen] = useState(false);
   const [showCategories, setShowCategories] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const toggleBlogMenu = () => {
     setBlogOpen(!isBlogOpen);
-    if (isPagesOpen) setPagesOpen(false); // Close pages menu if open
+    if (isPagesOpen) setPagesOpen(false);
   };
 
   const togglePagesMenu = () => {
     setPagesOpen(!isPagesOpen);
-    if (isBlogOpen) setBlogOpen(false); // Close blog menu if open
+    if (isBlogOpen) setBlogOpen(false);
   };
 
   const toggleCategories = () => {
     setShowCategories(!showCategories);
   };
 
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
-    <div
-      className="bg-cover bg-center text-white"
-      style={{ backgroundImage: 'url("/h1_hero.png.webp")' }}
-    >
-      <nav className=" sticky top-0 z-0 flex flex-col md:flex-row justify-between items-center py-4 px-8 text-white bg-opacity-70 bg-slate-800">
+    <div className="relative">
+      <nav
+        className={`fixed top-0 left-0 w-full z-50 flex flex-col md:flex-row justify-between items-center py-4 px-8 text-white transition-all duration-300 ${
+          isScrolled ? 'bg-slate-800' : 'bg-transparent'
+        }`}
+      >
         <div className="mb-4 md:mb-0">
           <Image src="/logo.svg" alt="logo" width={230} height={230} />
         </div>
-        <div className="flex flex-col md:flex-row md:space-x-4 space-y-2 md:space-y-0">
+        <div className="flex md:hidden">
+          <button onClick={toggleMenu} className="text-white focus:outline-none">
+            <FontAwesomeIcon icon={faBars} size="lg" />
+          </button>
+        </div>
+        <div
+          className={`${
+            isMenuOpen ? 'block' : 'hidden'
+          } md:flex flex-col md:flex-row md:space-x-4 space-y-2 md:space-y-0 mt-4 md:mt-0`}
+        >
           <Link href="/" passHref>
             <span className="hover:text-cyan-700 cursor-pointer">Home</span>
           </Link>
@@ -97,7 +126,10 @@ const Navbar: React.FC = () => {
         </div>
       </nav>
 
-      <section className="flex justify-center items-center h-64 bg-opacity-70 bg-slate-800 px-4">
+      <section
+        className="flex justify-center items-center h-64 bg-cover bg-center"
+        style={{ backgroundImage: 'url("/h1_hero.png.webp")' }}
+      >
         <div className="flex flex-col md:flex-row md:space-x-2 w-full max-w-xl">
           <input
             type="text"
