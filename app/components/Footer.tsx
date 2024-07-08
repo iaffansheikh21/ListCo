@@ -3,13 +3,17 @@
 import React from 'react';
 import Link from 'next/link';
 import { FaTwitter, FaFacebook, FaGithub, FaInstagram } from 'react-icons/fa';
+import Image from 'next/image'
 
 const Footer: React.FC = () => {
   return (
     <footer className="bg-white text-gray-700 py-6">
       <div className="container mx-auto text-center px-4">
         <div className="mb-4">
-          <a href="/" className="text-purple-500 text-xl font-bold">TravelWithMAS</a>
+           <a href="/">
+                     <Image src="/logo.svg" alt="logo" width={140} height={140} />
+           </a>
+         
           <p className="text-sm mt-2">
             Users and submit their own items. You can create different packages and by connecting
             with your PayPal or Stripe account charge users for registration to your directory portal.
