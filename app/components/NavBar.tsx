@@ -52,7 +52,7 @@ const Navbar: React.FC = () => {
         }`}
       >
         <div className="mb-4 md:mb-0">
-          <Image src="/logo.svg" alt="logo" width={230} height={230} />
+          <Image src="/logo.svg" alt="logo" width={140} height={140} />
         </div>
         <div className="flex md:hidden">
           <button onClick={toggleMenu} className="text-white focus:outline-none">
@@ -65,13 +65,13 @@ const Navbar: React.FC = () => {
           } md:flex flex-col md:flex-row md:space-x-4 space-y-2 md:space-y-0 mt-4 md:mt-0`}
         >
           <Link href="/" passHref>
-            <span className="hover:text-cyan-700 cursor-pointer">Home</span>
+            <span className="hover:text-purple-300 cursor-pointer">Home</span>
           </Link>
           <Link href="/Categories" passHref>
-            <span className="hover:text-cyan-700 cursor-pointer">Categories</span>
+            <span className="hover:text-purple-300 cursor-pointer">Categories</span>
           </Link>
           <div className="relative">
-            <span className="hover:text-cyan-700 cursor-pointer" onClick={toggleBlogMenu}>
+            <span className="hover:text-purple-300 cursor-pointer" onClick={toggleBlogMenu}>
               Blog
             </span>
             {isBlogOpen && (
@@ -81,19 +81,19 @@ const Navbar: React.FC = () => {
                 onMouseLeave={() => setBlogOpen(false)}
               >
                 <Link href="/blog" passHref>
-                  <span className="block px-4 py-2 hover:text-cyan-700 cursor-pointer">Blog</span>
+                  <span className="block px-4 py-2 hover:text-purple-300 cursor-pointer">Blog</span>
                 </Link>
                 <Link href="/blog-menu" passHref>
-                  <span className="block px-4 py-2 hover:text-cyan-700 cursor-pointer">Blog Menu</span>
+                  <span className="block px-4 py-2 hover:text-purple-300 cursor-pointer">Blog Menu</span>
                 </Link>
                 <Link href="/elements" passHref>
-                  <span className="block px-4 py-2 hover:text-cyan-700 cursor-pointer">Elements</span>
+                  <span className="block px-4 py-2 hover:text-purple-300 cursor-pointer">Elements</span>
                 </Link>
               </div>
             )}
           </div>
           <div className="relative">
-            <span className="hover:text-cyan-700 cursor-pointer" onClick={togglePagesMenu}>
+            <span className="hover:text-purple-300 cursor-pointer" onClick={togglePagesMenu}>
               Pages
             </span>
             {isPagesOpen && (
@@ -103,23 +103,23 @@ const Navbar: React.FC = () => {
                 onMouseLeave={() => setPagesOpen(false)}
               >
                 <Link href="/page-listing" passHref>
-                  <span className="block px-4 py-2 hover:text-cyan-700 cursor-pointer">Page Listing</span>
+                  <span className="block px-4 py-2 hover:text-purple-300 cursor-pointer">Page Listing</span>
                 </Link>
                 <Link href="/Categories" passHref>
-                  <span className="block px-4 py-2 hover:text-cyan-700 cursor-pointer">Categories</span>
+                  <span className="block px-4 py-2 hover:text-purple-300 cursor-pointer">Categories</span>
                 </Link>
               </div>
             )}
           </div>
           <Link href="/contact" passHref>
-            <span className="hover:text-cyan-700 cursor-pointer">Contact</span>
+            <span className="hover:text-purple-300 cursor-pointer">Contact</span>
           </Link>
         </div>
         <div className="flex space-x-4 mt-4 md:mt-0">
-          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+          <button className="bg-purple-600 hover:bg-purple-700 transform transition-transform duration-500  text-white py-2 px-4 rounded">
             Add to Listing
           </button>
-          <button className="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded flex items-center">
+          <button className="bg-purple-600 hover:bg-purple-700 transform transition-transform duration-500 text-white py-2 px-4 rounded flex items-center">
             <FontAwesomeIcon icon={faSignInAlt} className="mr-2" />
             Log In
           </button>
@@ -127,35 +127,45 @@ const Navbar: React.FC = () => {
       </nav>
 
       <section
-        className="flex justify-center items-center h-64 bg-cover bg-center"
-        style={{ backgroundImage: 'url("/h1_hero.png.webp")' }}
+        className="flex flex-col justify-center items-center h-96 bg-cover bg-center relative"
+        style={{ 
+          backgroundImage: 'url("/h1_hero.png.webp")',
+          backgroundBlendMode: 'overlay',
+          backgroundColor: 'rgba(0, 0, 0, 0.7)' 
+        }}
       >
-        <div className="flex flex-col md:flex-row md:space-x-2 w-full max-w-xl">
+        <div className="text-center text-white mb-8">
+          <h1 className="text-3xl md:text-4xl font-extralight mt-32">Explore what you are finding</h1>
+        </div>
+        <div
+          className="w-full max-w-xl px-4 flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-2 p-4 rounded-lg"
+          style={{ backgroundColor: 'rgba(255, 255, 255, 0.2)' }}
+        >
           <input
             type="text"
-            className="flex-grow py-2 px-4 rounded-md border border-gray-700 focus:outline-none focus:ring-2 focus:ring-cyan-500"
+            className="w-full md:flex-1 py-2 px-4 rounded-md border border-gray-700 focus:outline-none focus:ring-2 focus:ring-purple-600"
             placeholder="What are you finding?"
           />
-          <div className="relative mt-2 md:mt-0">
+          <div className="relative w-full md:flex-1">
             <button
-              className="py-2 px-4 bg-white border border-gray-700 rounded-md flex items-center focus:outline-none focus:ring-2 focus:ring-cyan-500"
+              className="w-full py-2 px-4 bg-white border border-gray-700 rounded-md flex items-center justify-between focus:outline-none focus:ring-2 focus:ring-purple-600"
               onClick={toggleCategories}
             >
-              <span className="mr-2">
-                {showCategories ? "Category" : "Which Category"}
+              <span>
+                {showCategories ? "Category" : "In where?"}
               </span>
               <FontAwesomeIcon icon={faCaretDown} />
             </button>
             {showCategories && (
               <div className="absolute left-0 mt-2 w-full bg-white text-black rounded-md shadow-lg">
-                <a href="#" className="block px-4 py-2 hover:bg-gray-300 hover:text-cyan-700">Category 1</a>
-                <a href="#" className="block px-4 py-2 hover:bg-gray-300 hover:text-cyan-700">Category 2</a>
-                <a href="#" className="block px-4 py-2 hover:bg-gray-300 hover:text-cyan-700">Category 3</a>
-                <a href="#" className="block px-4 py-2 hover:bg-gray-300 hover:text-cyan-700">Category 4</a>
+                <a href="#" className="block px-4 py-2 hover:bg-gray-100 hover:text-purple-700">Category 1</a>
+                <a href="#" className="block px-4 py-2 hover:bg-gray-100 hover:text-purple-700">Category 2</a>
+                <a href="#" className="block px-4 py-2 hover:bg-gray-100 hover:text-purple-700">Category 3</a>
+                <a href="#" className="block px-4 py-2 hover:bg-gray-100 hover:text-purple-700">Category 4</a>
               </div>
             )}
           </div>
-          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md flex items-center mt-2 md:mt-0">
+          <button className="w-full md:w-auto bg-purple-600 hover:bg-purple-700 text-white transform transition-transform duration-500 py-2 px-4 rounded-md flex items-center justify-center">
             <FontAwesomeIcon icon={faSearch} className="mr-2" />
             Search
           </button>
