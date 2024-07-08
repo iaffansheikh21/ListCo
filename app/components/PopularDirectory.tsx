@@ -65,7 +65,7 @@ const PopularDirectory: React.FC = () => {
             <div key={index} className="px-4">
               <div className="flex-shrink-0 w-full group border rounded-lg overflow-hidden shadow-lg">
                 <div className="relative overflow-hidden">
-                  <img src={"/properties1.png"} alt={directory.name} className="w-full h-48 object-cover transform transition-transform duration-300 group-hover:scale-110" />
+                  <img src={directory.image} alt={directory.name} className="w-full h-48 object-cover transform transition-transform duration-300 group-hover:scale-110" />
                   <div className="absolute top-0 left-0 bg-black bg-opacity-50 text-white rounded-tr-lg rounded-bl-lg px-4 py-2">$$$</div>
                   <div className="absolute top-0 right-0 bg-black bg-opacity-50 text-white rounded-tl-lg rounded-br-lg px-4 py-2">CLOSED</div>
                 </div>
