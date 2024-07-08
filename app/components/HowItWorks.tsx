@@ -1,53 +1,56 @@
-// components/Footer.tsx
-"use client"
+// components/HowItWorks.tsx
+
 import React from 'react';
-import Link from 'next/link';
-import { FaTwitter, FaFacebook, FaGithub, FaInstagram } from 'react-icons/fa';
-import Image from 'next/image'
-const Footer: React.FC = () => {
+
+const HowItWorks: React.FC = () => {
   return (
-    <footer className="bg-white text-gray-700 py-6">
-      <div className="container mx-auto text-center px-4">
-        <div className="mb-4">
-        <Image src="/logo2_footer.svg" alt="logo" width={140} height={140} />
-          <p className="text-sm mt-2">
-            Users and submit their own items. You can create different packages and by connecting
-            with your PayPal or Stripe account charge users for registration to your directory portal.
+    <div className="bg-white py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center">
+          <h2 className="text-base text-purple-700 font-semibold tracking-wide uppercase">How it works</h2>
+          <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+            Let&apos;s uncover the best places to eat, drink, and shop nearest to you.
           </p>
         </div>
-        <div className="flex justify-center space-x-4 mb-4">
-          <a href="#" className="text-purple-500 hover:text-purple-700">
-            <FaTwitter size={24} />
-          </a>
-          <a href="#" className="text-purple-500 hover:text-purple-700">
-            <FaFacebook size={24} />
-          </a>
-          <a href="#" className="text-purple-500 hover:text-purple-700">
-            <FaGithub size={24} />
-          </a>
-          <a href="#" className="text-purple-500 hover:text-purple-700">
-            <FaInstagram size={24} />
-          </a>
-        </div>
-        <div className="text-sm text-gray-500 mb-4">
-          <p className="space-y-2 md:space-y-0 md:flex md:justify-center md:space-x-2">
-            <Link href="/" legacyBehavior><a className="hover:underline">Home</a></Link>
-            <span>|</span>
-            <Link href="/Categories" legacyBehavior><a className="hover:underline">Categories</a></Link>
-            <span>|</span>
-            <Link href="/pages" legacyBehavior><a className="hover:underline">Pages</a></Link>
-            <span>|</span>
-            <Link href="/blog" legacyBehavior><a className="hover:underline">Blog</a></Link>
-            <span>|</span>
-            <Link href="/contact" legacyBehavior><a className="hover:underline">Contact</a></Link>
-          </p>
-        </div>
-        <div className="text-xs text-gray-500 mt-4">
-          <p>&copy; 2024 All rights reserved | This template is made with <span className="text-purple-500">💜</span> by Colorlib</p>
+        <div className="mt-10">
+          <div className="grid grid-cols-1 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 gap-x-8">
+            <div className="text-center">
+              <div className="flex items-center justify-center h-12 w-12 rounded-md bg-purple-700 text-white mx-auto">
+                <span>01</span>
+              </div>
+              <h3 className="mt-5 text-lg leading-6 font-medium text-gray-900">Find Businesses</h3>
+              <p className="mt-2 text-base text-gray-500">
+                Discover & connect with great local businesses in your local neighborhood like dentists, hair stylists and more.
+              </p>
+            </div>
+            <div className="text-center">
+              <div className="flex items-center justify-center h-12 w-12 rounded-md bg-purple-600 text-white mx-auto">
+                <span>02</span>
+              </div>
+              <h3 className="mt-5 text-lg leading-6 font-medium text-gray-900">Review Listings</h3>
+              <p className="mt-2 text-base text-gray-500">
+                Discover & connect with great local businesses in your local neighborhood like dentists, hair stylists and more.
+              </p>
+            </div>
+            <div className="text-center">
+              <div className="flex items-center justify-center h-12 w-12 rounded-md bg-purple-600 text-white mx-auto">
+                <span>03</span>
+              </div>
+              <h3 className="mt-5 text-lg leading-6 font-medium text-gray-900">Make a Reservation</h3>
+              <p className="mt-2 text-base text-gray-500">
+                Discover & connect with great local businesses in your local neighborhood like dentists, hair stylists and more.
+              </p>
+            </div>
+          </div>
+          <div className="mt-10 flex justify-center">
+            <button className="px-6 py-2 border border-transparent transform transition-transform duration-500 text-base font-medium rounded-md text-white bg-purple-600 hover:bg-purple-700">
+              Explore Listing
+            </button>
+          </div>
         </div>
       </div>
-    </footer>
+    </div>
   );
-}
+};
 
-export default Footer;
+export default HowItWorks;
