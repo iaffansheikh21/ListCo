@@ -4,7 +4,7 @@ import "./globals.css";
 import Footer from "./components/Footer";
 import NewsSection from "./components/NewsSection";
 import Navbar from "./components/NavBar";
-import HeroSection from "./components/HeroSection";
+import FloatingButton from "./components/FloatingButton"
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -21,6 +21,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>{children}
         <NewsSection/>
+        <FloatingButton />
        <Footer/>
       </body>
     </html>
