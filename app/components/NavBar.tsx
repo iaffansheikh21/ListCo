@@ -1,17 +1,16 @@
-// components/NavBar.tsx
 "use client"
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSignInAlt, faSearch, faCaretDown, faBars } from '@fortawesome/free-solid-svg-icons';
 
 const Navbar: React.FC = () => {
-  const [isBlogOpen, setBlogOpen] = useState(false);
-  const [isPagesOpen, setPagesOpen] = useState(false);
-  const [showCategories, setShowCategories] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [showCategories, setShowCategories] = useState(false);
+  const [showLanguages, setShowLanguages] = useState(false);
+  const [selectedLanguage, setSelectedLanguage] = useState("Japanese");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,22 +25,21 @@ const Navbar: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const toggleBlogMenu = () => {
-    setBlogOpen(!isBlogOpen);
-    if (isPagesOpen) setPagesOpen(false);
-  };
-
-  const togglePagesMenu = () => {
-    setPagesOpen(!isPagesOpen);
-    if (isBlogOpen) setBlogOpen(false);
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
   };
 
   const toggleCategories = () => {
     setShowCategories(!showCategories);
   };
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
+  const toggleLanguages = () => {
+    setShowLanguages(!showLanguages);
+  };
+
+  const selectLanguage = (language: string) => {
+    setSelectedLanguage(language);
+    setShowLanguages(false);
   };
 
   return (
@@ -59,70 +57,47 @@ const Navbar: React.FC = () => {
             <FontAwesomeIcon icon={faBars} size="lg" />
           </button>
         </div>
-        <div
-          className={`${
-            isMenuOpen ? 'block' : 'hidden'
-          } md:flex flex-col md:flex-row md:space-x-4 space-y-2 md:space-y-0 mt-4 md:mt-0`}
-        >
+        <div className="flex-grow md:flex md:items-center justify-center space-x-4 mt-4 md:mt-0">
           <Link href="/" passHref>
             <span className="hover:text-purple-300 cursor-pointer">Home</span>
           </Link>
           <Link href="/Categories" passHref>
             <span className="hover:text-purple-300 cursor-pointer">Categories</span>
           </Link>
-          <div className="relative">
-            <span className="hover:text-purple-300 cursor-pointer" onClick={toggleBlogMenu}>
-              Blog
-            </span>
-            {isBlogOpen && (
-              <div
-                className="absolute left-0 mt-2 w-48 bg-white text-black rounded-md shadow-lg"
-                onMouseEnter={() => setBlogOpen(true)}
-                onMouseLeave={() => setBlogOpen(false)}
-              >
-                <Link href="/blog" passHref>
-                  <span className="block px-4 py-2 hover:text-purple-300 cursor-pointer">Blog</span>
-                </Link>
-                <Link href="/blog-menu" passHref>
-                  <span className="block px-4 py-2 hover:text-purple-300 cursor-pointer">Blog Menu</span>
-                </Link>
-                <Link href="/elements" passHref>
-                  <span className="block px-4 py-2 hover:text-purple-300 cursor-pointer">Elements</span>
-                </Link>
-              </div>
-            )}
-          </div>
-          <div className="relative">
-            <span className="hover:text-purple-300 cursor-pointer" onClick={togglePagesMenu}>
-              Pages
-            </span>
-            {isPagesOpen && (
-              <div
-                className="absolute left-0 mt-2 w-48 bg-white text-black rounded-md shadow-lg"
-                onMouseEnter={() => setPagesOpen(true)}
-                onMouseLeave={() => setPagesOpen(false)}
-              >
-                <Link href="/page-listing" passHref>
-                  <span className="block px-4 py-2 hover:text-purple-300 cursor-pointer">Page Listing</span>
-                </Link>
-                <Link href="/Categories" passHref>
-                  <span className="block px-4 py-2 hover:text-purple-300 cursor-pointer">Categories</span>
-                </Link>
-              </div>
-            )}
-          </div>
-          <Link href="/contact" passHref>
-            <span className="hover:text-purple-300 cursor-pointer">Contact</span>
-          </Link>
         </div>
         <div className="flex space-x-4 mt-4 md:mt-0">
-          <button className="bg-purple-600 hover:bg-purple-700 transform transition-transform duration-500  text-white py-2 px-4 rounded">
-            Add to Listing
+          <button className="bg-purple-600 hover:bg-purple-700 transform transition-transform duration-500 text-white py-2 px-4 rounded">
+            Add Listing
           </button>
           <button className="bg-purple-600 hover:bg-purple-700 transform transition-transform duration-500 text-white py-2 px-4 rounded flex items-center">
             <FontAwesomeIcon icon={faSignInAlt} className="mr-2" />
             Log In
           </button>
+          <div className="relative">
+            <button
+              onClick={toggleLanguages}
+              className="hover:bg-purple-700 text-black transform transition-transform duration-500 py-2 px-4 rounded flex items-center bg-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-purple-600 hover:text-white"
+            >
+              <span>{selectedLanguage}</span>
+              <FontAwesomeIcon icon={faCaretDown} className="ml-2" />
+            </button>
+            {showLanguages && (
+              <div className="absolute right-0 mt-2 w-48 bg-white text-black rounded-md shadow-lg">
+                <a
+                  onClick={() => selectLanguage("English")}
+                  className="block px-4 py-2 hover:bg-gray-100 hover:text-purple-700 cursor-pointer"
+                >
+                  English
+                </a>
+                <a
+                  onClick={() => selectLanguage("Japanese")}
+                  className="block px-4 py-2 hover:bg-gray-100 hover:text-purple-700 cursor-pointer"
+                >
+                  Japanese
+                </a>
+              </div>
+            )}
+          </div>
         </div>
       </nav>
 
@@ -135,7 +110,7 @@ const Navbar: React.FC = () => {
         }}
       >
         <div className="text-center text-white mb-8">
-          <h1 className="text-3xl md:text-4xl font-extralight mt-32">Explore what you are finding</h1>
+          <h1 className="text-3xl md:text-4xl font-extralight mt-32">あなたが探しているものを見つけましょう</h1>
         </div>
         <div
           className="w-full max-w-xl px-4 flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-2 p-4 rounded-lg"
