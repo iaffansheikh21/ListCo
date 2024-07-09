@@ -1,0 +1,28 @@
+import React from 'react';
+
+const images = [
+  "/gallery1.png",
+  "/gallery2.png",
+  "/gallery3.png",
+  "/gallery4.png",
+];
+
+const ImageGallery: React.FC = () => {
+  return (
+    <div className="flex flex-col items-center justify-center min-h-screen p-6">
+      <h2 className="text-2xl font-semibold mb-4">Description</h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        {images.map((src, index) => (
+          <img
+            key={index}
+            src={src}
+            alt={`Gallery Image ${index + 1}`} // Corrected the template literal syntax
+            className="w-full h-auto rounded-lg shadow-md object-cover"
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default ImageGallery;
