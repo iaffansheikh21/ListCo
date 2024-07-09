@@ -1,20 +1,28 @@
 import React from 'react';
 
+// const cities = [
+//   { name: 'New York', listings: '65+', image: '/NewYork.png' },
+//   { name: 'Paris', listings: '60+', image: '/Paris.png' },
+//   { name: 'Rome', listings: '50+', image: '/Rome.png' },
+//   { name: 'Italy', listings: '28+', image: '/Italy.png' },
+//   { name: 'Nepal', listings: '99+', image: '/Nepal.png' },
+//   { name: 'London', listings: '50+', image: '/Paris.png' },
+// ];
 const cities = [
-  { name: 'New York', listings: '65+', image: '/NewYork.png' },
-  { name: 'Paris', listings: '60+', image: '/Paris.png' },
-  { name: 'Rome', listings: '50+', image: '/Rome.png' },
-  { name: 'Italy', listings: '28+', image: '/Italy.png' },
-  { name: 'Nepal', listings: '99+', image: '/Nepal.png' },
-  { name: 'London', listings: '50+', image: '/Paris.png' },
+  { name: 'ニューヨーク', listings: '65+', image: '/NewYork.png' },
+  { name: 'パリ', listings: '60+', image: '/Paris.png' },
+  { name: 'ローマ', listings: '50+', image: '/Rome.png' },
+  { name: 'イタリア', listings: '28+', image: '/Italy.png' },
+  { name: 'ネパール', listings: '99+', image: '/Nepal.png' },
+  { name: 'ロンドン', listings: '50+', image: '/Paris.png' },
 ];
 
 const TopCities: React.FC = () => {
   return (
     <section className="py-12">
       <div className="text-center mb-8">
-        <h2 className="text-4xl font-extralight text-purple-800">Explore Top Cities</h2>
-        <p className="text-gray-900">Let&apos;s uncover the best places to eat, drink, and shop nearest to you.</p>
+        <h2 className="text-3xl font-bold">Explore Top Cities</h2>
+        <p className="text-gray-600">Let&apos;s uncover the best places to eat, drink, and shop nearest to you.</p>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-4 md:px-8 lg:px-12">
         {cities.map((city) => (

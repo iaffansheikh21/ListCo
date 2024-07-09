@@ -1,7 +1,6 @@
 import React from 'react';
-import DescriptionPic from './DescriptionPic'; // Assume this is the ImageGallery component
+import DescriptionPic from './DescriptionPic';
 import ContactForm from './ContactForm';
-
 const MainLayout: React.FC = () => {
   return (
     <div className="container mx-auto px-4 py-8 flex flex-col md:flex-row md:space-x-8 items-start">

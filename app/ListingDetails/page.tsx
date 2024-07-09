@@ -5,7 +5,7 @@ import { FaSearch } from "react-icons/fa";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretDown, faSearch } from "@fortawesome/free-solid-svg-icons";
 import DescriptionPara from "../components/DescriptionPara";
-import MainLayout from "../components/MainLayout"
+import MainLayout from "../components/MainLayout";
 
 
 

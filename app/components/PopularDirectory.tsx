@@ -5,12 +5,19 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
+// const directories = [
+//   { name: 'Urban Areas1', description: "Let&apos;s uncover the best places to eat, drink", category: 'Food & Restaurant', image: '/properties1.png' },
+//   { name: 'Urban Areas2', description: "Let&apos;s uncover the best places to eat, drink", category: 'Food & Restaurant', image: '/properties2.png' },
+//   { name: 'Urban Areas3', description: "Let&apos;s uncover the best places to eat, drink", category: 'Food & Restaurant', image: '/properties3.png' },
+//   { name: 'Urban Areas4', description: "Let&apos;s uncover the best places to eat, drink", category: 'Food & Restaurant', image: '/properties2.png' },
+//   { name: 'Urban Areas5', description: "Let&apos;s uncover the best places to eat, drink", category: 'Food & Restaurant', image: '/properties3.png' },
+// ];
 const directories = [
-  { name: 'Urban Areas1', description: "Let&apos;s uncover the best places to eat, drink", category: 'Food & Restaurant', image: '/properties1.png' },
-  { name: 'Urban Areas2', description: "Let&apos;s uncover the best places to eat, drink", category: 'Food & Restaurant', image: '/properties2.png' },
-  { name: 'Urban Areas3', description: "Let&apos;s uncover the best places to eat, drink", category: 'Food & Restaurant', image: '/properties3.png' },
-  { name: 'Urban Areas4', description: "Let&apos;s uncover the best places to eat, drink", category: 'Food & Restaurant', image: '/properties2.png' },
-  { name: 'Urban Areas5', description: "Let&apos;s uncover the best places to eat, drink", category: 'Food & Restaurant', image: '/properties3.png' },
+  { name: '都市エリア1', description: "最高の飲食店を見つけましょう", category: 'フード＆レストラン', image: '/properties1.png' },
+  { name: '都市エリア2', description: "最高の飲食店を見つけましょう", category: 'フード＆レストラン', image: '/properties2.png' },
+  { name: '都市エリア3', description: "最高の飲食店を見つけましょう", category: 'フード＆レストラン', image: '/properties3.png' },
+  { name: '都市エリア4', description: "最高の飲食店を見つけましょう", category: 'フード＆レストラン', image: '/properties2.png' },
+  { name: '都市エリア5', description: "最高の飲食店を見つけましょう", category: 'フード＆レストラン', image: '/properties3.png' },
 ];
 
 const PopularDirectory: React.FC = () => {
@@ -56,8 +63,8 @@ const PopularDirectory: React.FC = () => {
   return (
     <section className="py-12">
       <div className="text-center mb-8">
-        <h2 className="text-4xl font-extralight text-purple-800">Popular Directory</h2>
-        <p className="text-gray-900">Let&apos;s uncover the best places to eat, drink, and shop nearest to you.</p>
+        <h2 className="text-3xl font-bold">Popular Directory</h2>
+        <p className="text-gray-600">Let&apos;s uncover the best places to eat, drink, and shop nearest to you.</p>
       </div>
       <div className="max-w-7xl mx-auto">
         <Slider ref={sliderRef} {...settings}>
