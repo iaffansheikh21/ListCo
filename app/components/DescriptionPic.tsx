@@ -13,12 +13,13 @@ const ImageGallery: React.FC = () => {
       <h2 className="text-2xl font-semibold mb-4">Description</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {images.map((src, index) => (
-          <img
-            key={index}
-            src={src}
-            alt={`Gallery Image ${index + 1}`} // Corrected the template literal syntax
-            className="w-full h-auto rounded-lg shadow-md object-cover"
-          />
+          <div key={index} className="relative overflow-hidden group">
+            <img
+              src={src}
+              alt={`Gallery Image ${index + 1}`}
+              className="w-full h-auto rounded-lg shadow-md object-cover transition-transform duration-300 transform-gpu group-hover:scale-105"
+            />
+          </div>
         ))}
       </div>
     </div>
