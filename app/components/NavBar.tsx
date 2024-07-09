@@ -6,6 +6,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSignInAlt, faSearch, faCaretDown, faBars } from '@fortawesome/free-solid-svg-icons';
 
 const Navbar: React.FC = () => {
+  const [isBlogOpen, setBlogOpen] = useState(false);
+  const [isPagesOpen, setPagesOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showCategories, setShowCategories] = useState(false);
@@ -24,6 +26,7 @@ const Navbar: React.FC = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+  
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -31,6 +34,15 @@ const Navbar: React.FC = () => {
 
   const toggleCategories = () => {
     setShowCategories(!showCategories);
+  };
+  const toggleBlogMenu = () => {
+    setBlogOpen(!isBlogOpen);
+    if (isPagesOpen) setPagesOpen(false);
+  };
+
+  const togglePagesMenu = () => {
+    setPagesOpen(!isPagesOpen);
+    if (isBlogOpen) setBlogOpen(false);
   };
 
   const toggleLanguages = () => {
@@ -64,7 +76,52 @@ const Navbar: React.FC = () => {
           <Link href="/Categories" passHref>
             <span className="hover:text-purple-300 cursor-pointer">Categories</span>
           </Link>
+          <div className="relative">
+            <span className="hover:text-purple-300 cursor-pointer" onClick={togglePagesMenu}>
+              Pages
+            </span>
+            {isPagesOpen && (
+              <div
+                className="absolute left-0 mt-2 w-48 bg-white text-black rounded-md shadow-lg"
+                onMouseEnter={() => setPagesOpen(true)}
+                onMouseLeave={() => setPagesOpen(false)}
+              >
+                <Link href="/page-listing" passHref>
+                  <span className="block px-4 py-2 hover:text-purple-300 cursor-pointer">Page Listing</span>
+                </Link>
+                <Link href="/Categories" passHref>
+                  <span className="block px-4 py-2 hover:text-purple-300 cursor-pointer">Categories</span>
+                </Link>
+              </div>
+            )}
+          </div>
+          <div className="relative">
+            <span className="hover:text-purple-300 cursor-pointer" onClick={toggleBlogMenu}>
+              Blog
+            </span>
+            {isBlogOpen && (
+              <div
+                className="absolute left-0 mt-2 w-48 bg-white text-black rounded-md shadow-lg"
+                onMouseEnter={() => setBlogOpen(true)}
+                onMouseLeave={() => setBlogOpen(false)}
+              >
+                <Link href="/blog" passHref>
+                  <span className="block px-4 py-2 hover:text-purple-300 cursor-pointer">Blog</span>
+                </Link>
+                <Link href="/blog-menu" passHref>
+                  <span className="block px-4 py-2 hover:text-purple-300 cursor-pointer">Blog Menu</span>
+                </Link>
+                <Link href="/elements" passHref>
+                  <span className="block px-4 py-2 hover:text-purple-300 cursor-pointer">Elements</span>
+                </Link>
+              </div>
+            )}
+          </div>
+          <Link href="/contact" passHref>
+            <span className="hover:text-purple-300 cursor-pointer">Contact</span>
+          </Link>
         </div>
+        
         <div className="flex space-x-4 mt-4 md:mt-0">
           <button className="bg-purple-600 hover:bg-purple-700 transform transition-transform duration-500 text-white py-2 px-4 rounded">
             Add Listing
