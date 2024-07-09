@@ -66,16 +66,43 @@ const Navbar: React.FC = () => {
           isScrolled ? "bg-slate-800" : "bg-transparent"
         }`}
       >
-        <div className="mb-4 md:mb-0 flex-shrink-0">
-          <Image src="/logo.svg" alt="logo" width={140} height={140} />
-        </div>
-        <div className="flex md:hidden">
-          <button
-            onClick={toggleMenu}
-            className="text-white focus:outline-none"
-          >
-            <FontAwesomeIcon icon={faBars} size="lg" />
-          </button>
+        <div className="flex items-center">
+          <div className="flex items-center">
+            <button
+              onClick={toggleMenu}
+              className="text-white focus:outline-none md:hidden"
+            >
+              <FontAwesomeIcon icon={faBars} size="lg" />
+            </button>
+            <div className="ml-2 md:ml-0">
+              <Image src="/logo.svg" alt="logo" width={140} height={140} />
+            </div>
+          </div>
+          <div className="ml-auto md:hidden">
+            <button
+              onClick={toggleLanguages}
+              className="hover:bg-purple-700 text-black transform transition-transform duration-500 py-2 px-4 md:px-6 rounded-md flex items-center text-sm md:text-base bg-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-purple-600 hover:text-white"
+            >
+              <span className="hidden md:inline">{selectedLanguage}</span>
+              <FontAwesomeIcon icon={faCaretDown} className="ml-2" />
+            </button>
+            {showLanguages && (
+              <div className="absolute right-0 mt-2 w-48 bg-white text-black rounded-md shadow-lg">
+                <a
+                  onClick={() => selectLanguage("English")}
+                  className="block px-4 py-2 hover:bg-gray-100 hover:text-purple-700 cursor-pointer"
+                >
+                  English
+                </a>
+                <a
+                  onClick={() => selectLanguage("Japanese")}
+                  className="block px-4 py-2 hover:bg-gray-100 hover:text-purple-700 cursor-pointer"
+                >
+                  Japanese
+                </a>
+              </div>
+            )}
+          </div>
         </div>
         <div
           className={`${
@@ -90,7 +117,7 @@ const Navbar: React.FC = () => {
               Categories
             </span>
           </Link>
-          {/* <div className="relative">
+          <div className="relative">
             <span
               className="hover:text-purple-300 cursor-pointer"
               onClick={togglePagesMenu}
@@ -115,8 +142,8 @@ const Navbar: React.FC = () => {
                 </Link>
               </div>
             )}
-          </div> */}
-          {/* <div className="relative">
+          </div>
+          <div className="relative">
             <span
               className="hover:text-purple-300 cursor-pointer"
               onClick={toggleBlogMenu}
@@ -146,44 +173,16 @@ const Navbar: React.FC = () => {
                 </Link>
               </div>
             )}
-          </div> */}
-          {/* <Link href="/contact" passHref>
+          </div>
+          <Link href="/contact" passHref>
             <span className="hover:text-purple-300 cursor-pointer">Contact</span>
-          </Link> */}
+          </Link>
         </div>
-        <div className="flex space-x-4 mt-4 md:mt-0">
-          {/* <button className="bg-purple-600 hover:bg-purple-700 transform transition-transform duration-500 text-white py-2 px-4 md:px-6 rounded-md text-sm md:text-base">
-            Add Listing
-          </button> */}
+        <div className="flex items-center ml-4 md:ml-0">
           <button className="bg-purple-600 hover:bg-purple-700 transform transition-transform duration-500 text-white py-2 px-4 md:px-6 rounded-md flex items-center text-sm md:text-base">
             <FontAwesomeIcon icon={faSignInAlt} className="mr-2" />
             Log In
           </button>
-          <div className="relative">
-            <button
-              onClick={toggleLanguages}
-              className="hover:bg-purple-700 text-black transform transition-transform duration-500 py-2 px-4 md:px-6 rounded-md flex items-center text-sm md:text-base bg-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-purple-600 hover:text-white"
-            >
-              <span className="hidden md:inline">{selectedLanguage}</span>
-              <FontAwesomeIcon icon={faCaretDown} className="ml-2" />
-            </button>
-            {showLanguages && (
-              <div className="absolute right-0 mt-2 w-48 bg-white text-black rounded-md shadow-lg">
-                <a
-                  onClick={() => selectLanguage("English")}
-                  className="block px-4 py-2 hover:bg-gray-100 hover:text-purple-700 cursor-pointer"
-                >
-                  English
-                </a>
-                <a
-                  onClick={() => selectLanguage("Japanese")}
-                  className="block px-4 py-2 hover:bg-gray-100 hover:text-purple-700 cursor-pointer"
-                >
-                  Japanese
-                </a>
-              </div>
-            )}
-          </div>
         </div>
       </nav>
 
