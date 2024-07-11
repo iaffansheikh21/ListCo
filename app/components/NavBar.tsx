@@ -39,6 +39,7 @@ const Navbar: React.FC = () => {
   const toggleCategories = () => {
     setShowCategories(!showCategories);
   };
+
   const toggleLanguages = () => {
     setShowLanguages(!showLanguages);
   };
@@ -115,7 +116,7 @@ const Navbar: React.FC = () => {
       <div
         className={`${
           isMenuOpen ? "block" : "hidden"
-        } md:hidden fixed inset-0 bg-gray-900 bg-opacity-95 z-50 flex flex-col items-center space-y-4 py-8`}
+        } md:hidden fixed inset-0 bg-gray-800 bg-opacity-full z-50 flex flex-col items-center space-y-4 py-8`}
       >
         <button
           onClick={toggleMenu}
@@ -126,19 +127,23 @@ const Navbar: React.FC = () => {
         <Link href="/" passHref>
           <span
             onClick={toggleMenu}
-            className="block py-2 px-4 md:px-6 hover:text-purple-300 cursor-pointer"
+            className="block py-2 px-4 md:px-6 text-purple-500 transform transition-transform duration-500 hover:text-purple-800 cursor-pointer"
           >
             Home
           </span>
         </Link>
-        <Link href="/categories" passHref>
+        <Link href="/Categories" passHref>
           <span
             onClick={toggleMenu}
-            className="block py-2 px-4 md:px-6 hover:text-purple-300 cursor-pointer"
+            className="block py-2 px-4 md:px-6 text-purple-500 transform transition-transform duration-500 hover:text-purple-800 cursor-pointer"
           >
             Categories
           </span>
         </Link>
+        <button className="bg-purple-600 hover:bg-purple-700 transform transition-transform duration-500 text-white py-2 px-4 rounded-md flex items-center text-sm md:text-base">
+          <FontAwesomeIcon icon={faSignInAlt} className="mr-2" />
+          Log In
+        </button>
       </div>
 
       <section
