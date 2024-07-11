@@ -169,7 +169,7 @@ const Navbar: React.FC = () => {
           </span>
         </Link>
         <button
-          className="block bg-purple-600 hover:bg-purple-700 text-white transform transition-transform duration-500 py-2 px-4 rounded-md flex items-center text-sm md:text-base"
+          className=" bg-purple-600 hover:bg-purple-700 text-white transform transition-transform duration-500 py-2 px-4 rounded-md flex items-center text-sm md:text-base"
           onClick={toggleMenu}
         >
           <FontAwesomeIcon icon={faSignInAlt} className="mr-2" />
