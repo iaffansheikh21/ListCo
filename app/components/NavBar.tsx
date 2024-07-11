@@ -73,11 +73,37 @@ const Navbar: React.FC = () => {
         <div className="flex items-center md:hidden">
           <button
             onClick={toggleMenu}
-            className="text-white focus:outline-none"
+            className="text-white focus:outline-none mr-2"
           >
             <FontAwesomeIcon icon={faBars} size="lg" />
           </button>
+          <div className="relative">
+            <button
+              onClick={toggleLanguages}
+              className="hover:bg-purple-700 text-black transform transition-transform duration-500 py-2 px-4 rounded-md flex items-center text-sm md:text-base bg-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-purple-600 hover:text-white"
+            >
+              <span className="hidden md:inline">{selectedLanguage}</span>
+              <FontAwesomeIcon icon={faCaretDown} className="ml-2" />
+            </button>
+            {showLanguages && (
+              <div className="absolute right-0 mt-2 w-48 bg-white text-black rounded-md shadow-lg">
+                <a
+                  onClick={() => selectLanguage("English")}
+                  className="block px-4 py-2 hover:bg-gray-100 hover:text-purple-700 cursor-pointer"
+                >
+                  English
+                </a>
+                <a
+                  onClick={() => selectLanguage("Japanese")}
+                  className="block px-4 py-2 hover:bg-gray-100 hover:text-purple-700 cursor-pointer"
+                >
+                  Japanese
+                </a>
+              </div>
+            )}
+          </div>
         </div>
+
         <div className="hidden md:flex items-center space-x-4">
           <button className="bg-purple-600 hover:bg-purple-700 transform transition-transform duration-500 text-white py-2 px-4 rounded-md flex items-center text-sm md:text-base">
             <FontAwesomeIcon icon={faSignInAlt} className="mr-2" />
@@ -115,7 +141,7 @@ const Navbar: React.FC = () => {
       <div
         className={`${
           isMenuOpen ? "block" : "hidden"
-        } md:hidden fixed inset-0 bg-gray-900 bg-opacity-150 z-50 flex flex-col items-center space-y-4 py-8`}
+        } md:hidden fixed inset-0 bg-gray-900 bg-opacity-95 z-50 flex flex-col items-center space-y-4 py-8`}
       >
         <button
           onClick={toggleMenu}
