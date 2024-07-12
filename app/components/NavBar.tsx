@@ -8,6 +8,7 @@ import {
   faSearch,
   faCaretDown,
   faBars,
+  faTimes,
 } from "@fortawesome/free-solid-svg-icons";
 
 const Navbar: React.FC = () => {
@@ -39,6 +40,7 @@ const Navbar: React.FC = () => {
   const toggleCategories = () => {
     setShowCategories(!showCategories);
   };
+
   const toggleLanguages = () => {
     setShowLanguages(!showLanguages);
   };
@@ -141,40 +143,42 @@ const Navbar: React.FC = () => {
       <div
         className={`${
           isMenuOpen ? "block" : "hidden"
-        } md:hidden fixed inset-0 bg-gray-900 bg-opacity-95 z-50 flex flex-col items-center space-y-4 py-8`}
+        } md:hidden fixed inset-0 bg-gray-900 bg-opacity-150 z-50`}
       >
-        <button
-          onClick={toggleMenu}
-          className="text-white focus:outline-none self-end mr-8"
-        >
-          <FontAwesomeIcon icon={faBars} size="lg" />
-        </button>
-        <div className="flex items-center">
+        <div className="flex justify-between items-center py-4 px-8 text-white">
           <Image src="/logo.svg" alt="logo" width={140} height={140} />
+          <button
+            onClick={toggleMenu}
+            className="text-white focus:outline-none"
+          >
+            <FontAwesomeIcon icon={faTimes} size="lg" /> {/* Close (cross) icon */}
+          </button>
         </div>
-        <Link href="/" passHref>
-          <span
+        <div className="flex flex-col items-start space-y-4 py-8 pl-8">
+          <Link href="/" passHref>
+            <span
+              onClick={toggleMenu}
+              className="block py-2 px-4 text-white hover:text-purple-300 cursor-pointer"
+            >
+              Home
+            </span>
+          </Link>
+          <Link href="/Categories" passHref>
+            <span
+              onClick={toggleMenu}
+              className="block py-2 px-4 text-white hover:text-purple-300 cursor-pointer"
+            >
+              Categories
+            </span>
+          </Link>
+          <button
+            className="bg-purple-600 hover:bg-purple-700 text-white transform transition-transform duration-500 py-2 px-4 rounded-md flex items-center text-sm md:text-base"
             onClick={toggleMenu}
-            className="block py-2 px-4 md:px-6 text-white hover:text-purple-300 cursor-pointer"
           >
-            Home
-          </span>
-        </Link>
-        <Link href="/Categories" passHref>
-          <span
-            onClick={toggleMenu}
-            className="block py-2 px-4 md:px-6 text-white hover:text-purple-300 cursor-pointer"
-          >
-            Categories
-          </span>
-        </Link>
-        <button
-          className=" bg-purple-600 hover:bg-purple-700 text-white transform transition-transform duration-500 py-2 px-4 rounded-md flex items-center text-sm md:text-base"
-          onClick={toggleMenu}
-        >
-          <FontAwesomeIcon icon={faSignInAlt} className="mr-2" />
-          Log In
-        </button>
+            <FontAwesomeIcon icon={faSignInAlt} className="mr-2" />
+            Log In
+          </button>
+        </div>
       </div>
 
       <section
@@ -208,35 +212,23 @@ const Navbar: React.FC = () => {
               <FontAwesomeIcon icon={faCaretDown} />
             </button>
             {showCategories && (
-              <div className="absolute left-0 mt-2 w-full bg-white text-black rounded-md shadow-lg">
+              <div className="absolute z-50 left-0 mt-2 w-full bg-white text-black rounded-md shadow-lg">
                 <a
-                  href="#"
-                  className="block px-4 py-2 hover:bg-gray-100 hover:text-purple-700"
+                  className="block px-4 py-2 hover:bg-gray-100 hover:text-purple-700 cursor-pointer"
+                  onClick={toggleCategories}
                 >
-                  Category 1
+                  Option 1
                 </a>
                 <a
-                  href="#"
-                  className="block px-4 py-2 hover:bg-gray-100 hover:text-purple-700"
+                  className="block px-4 py-2 hover:bg-gray-100 hover:text-purple-700 cursor-pointer"
+                  onClick={toggleCategories}
                 >
-                  Category 2
-                </a>
-                <a
-                  href="#"
-                  className="block px-4 py-2 hover:bg-gray-100 hover:text-purple-700"
-                >
-                  Category 3
-                </a>
-                <a
-                  href="#"
-                  className="block px-4 py-2 hover:bg-gray-100 hover:text-purple-700"
-                >
-                  Category 4
+                  Option 2
                 </a>
               </div>
             )}
           </div>
-          <button className="w-full md:w-auto bg-purple-600 hover:bg-purple-700 text-white transform transition-transform duration-500 py-2 px-4 md:px-6 rounded-md flex items-center justify-center text-sm md:text-base">
+          <button className="w-full md:w-auto py-2 px-6 bg-purple-600 hover:bg-purple-700 transform transition-transform duration-500 text-white rounded-md flex items-center text-sm md:text-base">
             <FontAwesomeIcon icon={faSearch} className="mr-2" />
             Search
           </button>
