@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React, { useEffect, useRef } from 'react';
 import Slider from 'react-slick';
@@ -12,6 +12,7 @@ import 'slick-carousel/slick/slick-theme.css';
 //   { name: 'Urban Areas4', description: "Let&apos;s uncover the best places to eat, drink", category: 'Food & Restaurant', image: '/newDirectory2.png' },
 //   { name: 'Urban Areas5', description: "Let&apos;s uncover the best places to eat, drink", category: 'Food & Restaurant', image: '/newDirectory3.png' },
 // ];
+
 const directories = [
   { name: '都市エリア1', description: "最高の飲食店を見つけましょう", category: 'フード＆レストラン', image: '/newDirectory1.png' },
   { name: '都市エリア2', description: "最高の飲食店を見つけましょう", category: 'フード＆レストラン', image: '/newDirectory2.png' },
@@ -51,28 +52,33 @@ const NewDirectory: React.FC = () => {
         },
       },
       {
-        breakpoint: 600,
+        breakpoint: 768,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+          dots: true,
         },
       },
     ],
   };
 
   return (
-    <section className="py-12">
-      <div className="text-center mb-8">
-        <h2 className="text-4xl font-extralight text-purple-800">New Directory</h2>
-        <p className="text-gray-600">Let&apos;s uncover the best places to eat, drink, and shop nearest to you.</p>
-      </div>
-      <div className="max-w-7xl mx-auto">
+    <section className="py-12 bg-gray-100 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-8">
+          <h2 className="text-4xl font-extralight text-purple-800">New Directory</h2>
+          <p className="text-gray-600">Let&apos;s uncover the best places to eat, drink, and shop nearest to you.</p>
+        </div>
         <Slider ref={sliderRef} {...settings}>
           {directories.map((directory, index) => (
-            <div key={index} className="px-4">
-              <div className="flex-shrink-0 w-full group border rounded-lg overflow-hidden shadow-lg">
+            <div key={index} className="px-2 sm:px-4">
+              <div className="group border rounded-lg overflow-hidden shadow-lg">
                 <div className="relative overflow-hidden">
-                  <img src={directory.image} alt={directory.name} className="w-full h-48 object-cover transform transition-transform duration-300 group-hover:scale-110" />
+                  <img
+                    src={directory.image}
+                    alt={directory.name}
+                    className="w-full h-48 sm:h-56 object-cover transform transition-transform duration-300 group-hover:scale-110"
+                  />
                   <div className="absolute top-0 left-0 bg-black bg-opacity-50 text-white rounded-tr-lg rounded-bl-lg px-4 py-2">$$$</div>
                   <div className="absolute top-0 right-0 bg-black bg-opacity-50 text-white rounded-tl-lg rounded-br-lg px-4 py-2">CLOSED</div>
                 </div>
