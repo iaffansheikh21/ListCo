@@ -66,7 +66,7 @@ const PopularDirectory: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 overflow-hidden">
         <div className="text-center mb-8">
           <h2 className="text-4xl font-extralight text-purple-800">Popular Directory</h2>
-          <p className="text-gray-600">Let's uncover the best places to eat, drink, and shop nearest to you.</p>
+          <p className="text-gray-600">Let&apos;s uncover the best places to eat, drink, and shop nearest to you.</p>
         </div>
         <Slider ref={sliderRef} {...settings}>
           {directories.map((directory, index) => (
