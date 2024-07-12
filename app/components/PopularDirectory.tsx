@@ -63,7 +63,7 @@ const PopularDirectory: React.FC = () => {
   return (
     <section className="py-12">
       <div className="text-center mb-8">
-        <h2 className="text-3xl font-bold">Popular Directory</h2>
+        <h2 className="text-4xl font-extralight text-purple-800">Popular Directory</h2>
         <p className="text-gray-600">Let&apos;s uncover the best places to eat, drink, and shop nearest to you.</p>
       </div>
       <div className="max-w-7xl mx-auto">
