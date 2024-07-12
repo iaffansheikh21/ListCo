@@ -50,6 +50,17 @@ const Navbar: React.FC = () => {
     setShowLanguages(false);
   };
 
+  const getLanguageAbbreviation = (language: string) => {
+    switch (language) {
+      case "English":
+        return "En";
+      case "Japanese":
+        return "Jp";
+      default:
+        return language;
+    }
+  };
+
   return (
     <div className="relative">
       <nav
@@ -84,6 +95,9 @@ const Navbar: React.FC = () => {
               onClick={toggleLanguages}
               className="hover:bg-purple-700 text-black transform transition-transform duration-500 py-2 px-4 rounded-md flex items-center text-sm md:text-base bg-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-purple-600 hover:text-white"
             >
+              <span className="md:hidden">
+                {getLanguageAbbreviation(selectedLanguage)}
+              </span>
               <span className="hidden md:inline">{selectedLanguage}</span>
               <FontAwesomeIcon icon={faCaretDown} className="ml-2" />
             </button>
@@ -116,6 +130,9 @@ const Navbar: React.FC = () => {
               onClick={toggleLanguages}
               className="hover:bg-purple-700 text-black transform transition-transform duration-500 py-2 px-4 rounded-md flex items-center text-sm md:text-base bg-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-purple-600 hover:text-white"
             >
+              <span className="md:hidden">
+                {getLanguageAbbreviation(selectedLanguage)}
+              </span>
               <span className="hidden md:inline">{selectedLanguage}</span>
               <FontAwesomeIcon icon={faCaretDown} className="ml-2" />
             </button>
