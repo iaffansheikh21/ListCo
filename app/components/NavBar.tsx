@@ -195,7 +195,7 @@ const Navbar: React.FC = () => {
           </h1>
         </div>
         <div
-          className="w-full max-w-xl px-4 flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-2 p-4 rounded-lg"
+          className="w-full max-w-xl mb-10 px-4 flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-2 p-4 rounded-lg"
           style={{ backgroundColor: "rgba(255, 255, 255, 0.2)" }}
         >
           <input
