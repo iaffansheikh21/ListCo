@@ -175,7 +175,7 @@ const Navbar: React.FC = () => {
           <Link href="/" passHref>
             <span
               onClick={toggleMenu}
-              className="block py-2 px-4 text-white hover:text-purple-300 cursor-pointer"
+              className="block py-2  text-white hover:text-purple-300 cursor-pointer"
             >
               Home
             </span>
@@ -183,7 +183,7 @@ const Navbar: React.FC = () => {
           <Link href="/Categories" passHref>
             <span
               onClick={toggleMenu}
-              className="block py-2 px-4 text-white hover:text-purple-300 cursor-pointer"
+              className="block py-2 text-white hover:text-purple-300 cursor-pointer"
             >
               Categories
             </span>
