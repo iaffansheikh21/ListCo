@@ -68,7 +68,7 @@ const Navbar: React.FC = () => {
     <div className="relative">
       <nav
         className={`fixed top-0 left-0 w-full z-50 flex justify-between items-center py-4 px-8 text-white transition-all duration-300 ${
-          isScrolled ? 'bg-slate-800' : 'bg-transparent'
+          isScrolled ? 'bg-slate-900' : 'bg-transparent'
         }`}
       >
         <div className="flex items-center">

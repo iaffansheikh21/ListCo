@@ -1,28 +1,14 @@
 'use client'
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch, faCaretDown, faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 
 const LoginNavbar: React.FC = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showLanguages, setShowLanguages] = useState(false);
   const [selectedLanguage, setSelectedLanguage] = useState("Japanese");
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 0) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -49,12 +35,8 @@ const LoginNavbar: React.FC = () => {
   };
 
   return (
-    <div className="relative">
-      <nav
-        className={`fixed top-0 left-0 w-full z-50 flex justify-between items-center py-4 px-8 text-white transition-all duration-300 ${
-          isScrolled ? "bg-slate-800" : "bg-transparent"
-        }`}
-      >
+    <div className="sticky top-0 z-50">
+      <nav className="bg-slate-900 w-full flex justify-between items-center py-4 px-8 text-white">
         <div className="flex items-center">
           <Image src="/logo.svg" alt="logo" width={140} height={140} />
         </div>
@@ -64,17 +46,12 @@ const LoginNavbar: React.FC = () => {
             <span className="hover:text-purple-300 cursor-pointer">Home</span>
           </Link>
           <Link href="/Categories" passHref>
-            <span className="hover:text-purple-300 cursor-pointer">
-              Categories
-            </span>
+            <span className="hover:text-purple-300 cursor-pointer">Categories</span>
           </Link>
         </div>
 
         <div className="flex items-center md:hidden">
-          <button
-            onClick={toggleMenu}
-            className="text-white focus:outline-none mr-2"
-          >
+          <button onClick={toggleMenu} className="text-white focus:outline-none mr-2">
             <FontAwesomeIcon icon={faBars} size="lg" />
           </button>
           <div className="relative">
@@ -141,48 +118,27 @@ const LoginNavbar: React.FC = () => {
 
       {/* Sidebar Menu for Small Screens */}
       <div
-        className={`${
-          isMenuOpen ? "block" : "hidden"
-        } md:hidden fixed inset-0 bg-gray-900 bg-opacity-150 z-50`}
+        className={`${isMenuOpen ? "block" : "hidden"} md:hidden fixed inset-0 bg-gray-900 bg-opacity-150 z-50`}
       >
         <div className="flex justify-between items-center py-4 px-8 text-white">
           <Image src="/logo.svg" alt="logo" width={140} height={140} />
-          <button
-            onClick={toggleMenu}
-            className="text-white focus:outline-none"
-          >
+          <button onClick={toggleMenu} className="text-white focus:outline-none">
             <FontAwesomeIcon icon={faTimes} size="lg" /> {/* Close (cross) icon */}
           </button>
         </div>
         <div className="flex flex-col items-start space-y-4 py-8 pl-8">
           <Link href="/" passHref>
-            <span
-              onClick={toggleMenu}
-              className="block py-2  text-white hover:text-purple-300 cursor-pointer"
-            >
+            <span onClick={toggleMenu} className="block py-2  text-white hover:text-purple-300 cursor-pointer">
               Home
             </span>
           </Link>
           <Link href="/Categories" passHref>
-            <span
-              onClick={toggleMenu}
-              className="block py-2 text-white hover:text-purple-300 cursor-pointer"
-            >
+            <span onClick={toggleMenu} className="block py-2 text-white hover:text-purple-300 cursor-pointer">
               Categories
             </span>
           </Link>
         </div>
       </div>
-
-      <section
-        className="flex flex-col justify-center items-center h-96 bg-cover bg-center relative"
-        style={{
-          backgroundImage: 'url("/h1_hero.png.webp")',
-          backgroundBlendMode: "overlay",
-          backgroundColor: "rgba(0, 0, 0, 0.7)",
-        }}
-      >
-      </section>
     </div>
   );
 };
