@@ -41,7 +41,7 @@ const LoginForm: React.FC = () => {
           </div>
         </form>
         <div className="text-sm text-center text-gray-600">
-          Don't have an account?{' '}
+          Don&apos;t have an account?{' '}
           <Link href="/SignUp" legacyBehavior>
             <a className="font-medium text-primary hover:text-secondary">Sign Up</a>
           </Link>
