@@ -212,13 +212,13 @@ const Navbar: React.FC = () => {
           backgroundColor: 'rgba(0, 0, 0, 0.7)',
         }}
       >
-        <div className="text-center text-white mb-8">
+        <div className="text-center text-white mb-8 mt-4">
           <h1 className="text-3xl md:text-4xl font-extralight mt-32">
             あなたが探しているものを見つけましょう
           </h1>
         </div>
         <div
-          className="w-full max-w-xl mb-12 px-4 flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-2 p-4 rounded-lg"
+          className="w-full max-w-xl mb-14 px-4 flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-2 p-4 rounded-lg"
           style={{ backgroundColor: 'rgba(255, 255, 255, 0.2)' }}
         >
           <div className="flex-grow w-full md:w-auto mb-2 md:mb-0 relative">
