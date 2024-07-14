@@ -6,7 +6,7 @@ const SignupPage: React.FC = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <LoginNavbar />
-      <div className="flex flex-col items-center justify-center flex-grow bg-gray-100 mt-6">
+      <div className="flex flex-col items-center justify-center flex-grow bg-white mt-6">
         <div className="w-full max-w-md p-6 bg-purple-100 rounded-lg shadow-md">
           <h2 className="text-2xl font-bold text-center text-primary mb-4">Sign Up</h2>
           <form className="space-y-4">
