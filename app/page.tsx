@@ -5,6 +5,7 @@ import TopCities from "./components/TopCitites";
 import NewDirectory from "./components/NewDirectory";
 import PopularDirectory from "./components/PopularDirectory";
 import HowItWorks from "./components/HowItWorks";
+import Blogs from "./components/Blogs";
 
 
 
@@ -17,7 +18,8 @@ const Home: React.FC = () => {
             <TopCities/>
             <PopularDirectory/>
             <HowItWorks />
-            <NewDirectory/>            
+            <NewDirectory/>   
+            <Blogs/>         
             {/* <Footer/> */}
 
             {/* Rest of your page content */}

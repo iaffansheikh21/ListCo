@@ -84,6 +84,11 @@ const Navbar: React.FC = () => {
               Categories
             </span>
           </Link>
+          <Link href="/Blogs" passHref>
+            <span className="hover:text-purple-300 cursor-pointer">
+              Blogs
+            </span>
+          </Link>
         </div>
 
         <div className="flex items-center md:hidden">
@@ -192,6 +197,14 @@ const Navbar: React.FC = () => {
               className="block py-2 text-white hover:text-purple-300 cursor-pointer"
             >
               Categories
+            </span>
+          </Link>
+          <Link href="/Blogs" passHref>
+            <span
+              onClick={toggleMenu}
+              className="block py-2 text-white hover:text-purple-300 cursor-pointer"
+            >
+              Blogs
             </span>
           </Link>
           <button
