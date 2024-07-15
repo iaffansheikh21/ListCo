@@ -47,7 +47,7 @@ const Blogs = () => {
         <p className="text-gray-600 mb-8">Discover the Latest Insights, Tips, and Trends from Our Blog.</p>
         <div className="flex flex-wrap justify-center space-y-6 md:space-y-0 md:space-x-6">
           {blogs.slice(currentIndex, currentIndex + 2).map((blog) => (
-            <Link href={'/BlogsDetails'} legacyBehavior>
+            <Link href={'/BlogsDetails'} legacyBehavior key={blog.id}>
               <a className="max-w-xs bg-white rounded-lg shadow-md overflow-hidden transition-transform transform hover:scale-105 mx-2">
                 <Image
                   src={blog.image}
