@@ -41,7 +41,7 @@ const Footer: React.FC = () => {
             <span>|</span>
             <Link href="/pages" legacyBehavior><a className="hover:underline">Pages</a></Link>
             <span>|</span>
-            <Link href="/blog" legacyBehavior><a className="hover:underline">Blog</a></Link>
+            <Link href="/Blogs" legacyBehavior><a className="hover:underline">Blogs</a></Link>
             <span>|</span>
             <Link href="/contact" legacyBehavior><a className="hover:underline">Contact</a></Link>
           </p>
