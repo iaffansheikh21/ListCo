@@ -15,10 +15,9 @@ const Home: React.FC = () => {
         <div>
             <Navbar /> 
             <TopCities/>
-            {/* <PopularDirectory/> */}
+            <PopularDirectory/>
             <HowItWorks />
-            <NewDirectory/>
-            
+            <NewDirectory/>            
             {/* <Footer/> */}
 
             {/* Rest of your page content */}
