@@ -9,7 +9,7 @@ const images = [
 
 const DescriptionPic: React.FC = () => {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen p-6">
+    <div className="flex flex-col items-center justify-center p-0 md:p-6">
       <h2 className="text-2xl font-semibold mb-4">Description</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {images.map((src, index) => (
