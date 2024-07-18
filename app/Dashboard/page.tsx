@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react';
+import DashboardNavbar from '../components/DashboardNavbar';
 
 const Dashboard: React.FC = () => {
   const [users, setUsers] = useState<any[]>([]); // For list of logged-in users
@@ -16,20 +17,6 @@ const Dashboard: React.FC = () => {
           profilePicture: '/List1.png',
           firstName: 'John',
           lastName: 'Doe',
-        },
-        {
-          name: 'Jane Smith',
-          email: 'jane.smith@example.com',
-          profilePicture: '/List2.png',
-          firstName: 'Jane',
-          lastName: 'Smith',
-        },
-        {
-          name: 'Alex Johnson',
-          email: 'alex.johnson@example.com',
-          profilePicture: '/List3.png',
-          firstName: 'Alex',
-          lastName: 'Johnson',
         },
       ];
       setUsers(usersData);
@@ -47,20 +34,21 @@ const Dashboard: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-white p-4">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div>
+        <DashboardNavbar/>
+    <div className="min-h-screen bg-white p-4 mt-6">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
         {/* Left Side: Current User Details */}
-        <div>
+        <div className="md:col-span-1">
           <h1 className="text-3xl font-bold mb-4">Dashboard</h1>
           <div className="bg-white p-6 rounded-lg shadow-lg">
-            <h3 className="text-lg font-semibold mb-4">Logged In Users</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 gap-6">
+            <div className="space-y-4">
               {users.map((user, index) => (
                 <div
                   key={index}
                   className="bg-gray-100 p-4 rounded-lg shadow-md flex flex-col items-center transform transition-transform duration-300 hover:scale-105"
                 >
-                  <img src={user.profilePicture} alt="Profile" className="w-16 h-16 rounded-full mb-4" />
+                  <img src={user.profilePicture} alt="Profile" className="w-36 h-36 rounded-md mb-4" />
                   <div className="text-center">
                     <h2 className="text-xl font-bold">{user.name}</h2>
                     <p className="text-gray-600">{user.email}</p>
@@ -72,7 +60,7 @@ const Dashboard: React.FC = () => {
         </div>
 
         {/* Right Side: Current User Profile Form */}
-        <div>
+        <div className="md:col-span-2">
           <h2 className="text-2xl font-bold mb-4">Profile</h2>
           <form className="bg-white p-6 rounded-lg shadow-lg">
             <div className="mb-4">
@@ -80,7 +68,7 @@ const Dashboard: React.FC = () => {
               <input
                 type="text"
                 value={currentUser.firstName}
-                className="w-full mt-1 p-2 border border-gray-300 rounded-md"
+                className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-700"
                 readOnly
               />
             </div>
@@ -89,7 +77,7 @@ const Dashboard: React.FC = () => {
               <input
                 type="text"
                 value={currentUser.lastName}
-                className="w-full mt-1 p-2 border border-gray-300 rounded-md"
+                className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-700"
                 readOnly
               />
             </div>
@@ -98,7 +86,7 @@ const Dashboard: React.FC = () => {
               <input
                 type="email"
                 value={currentUser.email}
-                className="w-full mt-1 p-2 border border-gray-300 rounded-md"
+                className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-700"
                 readOnly
               />
             </div>
@@ -107,22 +95,23 @@ const Dashboard: React.FC = () => {
               <input
                 type="password"
                 placeholder="New Password"
-                className="w-full mt-1 p-2 border border-gray-300 rounded-md"
+                className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-700"
               />
             </div>
             <div className="mb-4">
               <label className="block text-gray-700">Profile Picture</label>
               <input
                 type="file"
-                className="w-full mt-1 p-2 border border-gray-300 rounded-md"
+                className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-700"
               />
             </div>
-            <button className="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition-colors duration-300">
+            <button className="w-full px-4 py-2 font-medium text-white bg-purple-600 rounded-md hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
               Update Profile
             </button>
           </form>
         </div>
       </div>
+    </div>
     </div>
   );
 };
