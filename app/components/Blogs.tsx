@@ -92,7 +92,7 @@ const blogs = [
   },
   {
     id: 2,
-    image: '/blog2.jpg',
+    image: '/blog3.jpg',
     alt: 'ニュース 2',
     date: '3月12日',
     author: 'アラン',
@@ -122,7 +122,7 @@ const Blogs = () => {
         <p className="text-gray-600 mb-8">Discover the Latest Insights, Tips, and Trends from Our Blog.</p>
         <div className="flex flex-wrap justify-center space-y-6 md:space-y-0 md:space-x-6">
           {blogs.slice(currentIndex, currentIndex + 2).map((blog) => (
-            <Link href={`/Blogss/${blog.slug}`} legacyBehavior key={blog.id}>
+            <Link href={`/BlogsDetails/${blog.slug}`} legacyBehavior key={blog.id}>
               <a className="max-w-xs bg-white rounded-lg shadow-md overflow-hidden transition-transform transform hover:scale-105 mx-2">
                 <Image
                   src={blog.image}
