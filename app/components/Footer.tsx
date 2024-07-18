@@ -38,12 +38,12 @@ const Footer: React.FC = () => {
             <Link href="/" legacyBehavior><a className="hover:underline">Home</a></Link>
             <span>|</span>
             <Link href="/Categories" legacyBehavior><a className="hover:underline">Categories</a></Link>
-            <span>|</span>
-            <Link href="/pages" legacyBehavior><a className="hover:underline">Pages</a></Link>
+            {/* <span>|</span> */}
+            {/* <Link href="/pages" legacyBehavior><a className="hover:underline">Pages</a></Link> */}
             <span>|</span>
             <Link href="/Blogs" legacyBehavior><a className="hover:underline">Blogs</a></Link>
             <span>|</span>
-            <Link href="/contact" legacyBehavior><a className="hover:underline">Contact</a></Link>
+            <Link href="/Contact" legacyBehavior><a className="hover:underline">Contact</a></Link>
           </p>
         </div>
         <div className="text-xs text-gray-500 mt-4">
