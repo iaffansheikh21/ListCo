@@ -118,7 +118,7 @@ const ContactForm: React.FC = () => {
         onSubmit={handleSubmit}
         className="p-8 rounded-lg shadow-lg w-full max-w-2xl bg-white mt-6"
       >
-        <h2 className="text-2xl font-normla mb-6 text-center text-purple-950">Let's Talk</h2>
+        <h2 className="text-2xl font-normla mb-6 text-center text-purple-950">Let&apos;s Talk</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="mb-4">
             <label htmlFor="name" className="block text-gray-700 mb-2">
