@@ -35,7 +35,7 @@ const LoginForm: React.FC = () => {
               <Link href={'/Dashboard'}>
               <button
                 type="submit"
-                className="w-full px-4 py-2 font-medium text-white bg-purple-600 rounded-md hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
+                className="w-full px-4 py-2 font-medium text-white bg-purple-600 rounded-md hover:bg-purple-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition duration-500"
               >
                 Login
               </button>

@@ -12,7 +12,7 @@ export const FloatingButton = () => {
   return (
     <button 
     onClick={scrollToTop} 
-    className="fixed bottom-4 right-4 bg-purple-600 text-white p-3 rounded-full shadow-lg hover:bg-purple-700 transition duration-300"
+    className="fixed bottom-4 right-4 bg-purple-600 text-white p-3 rounded-full shadow-lg hover:bg-purple-800 transition duration-500"
 >
     ↑
 </button>

@@ -63,7 +63,7 @@ const LoginNavbar: React.FC = () => {
           <div className="relative">
             <button
               onClick={toggleLanguages}
-              className="hover:bg-purple-900 text-black transform transition-transform duration-500 py-2 px-4 rounded-md flex items-center text-sm md:text-base bg-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-purple-700 hover:text-white"
+              className="hover:bg-purple-900 text-black transition duration-500 py-2 px-4 rounded-md flex items-center text-sm md:text-base bg-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-purple-700 hover:text-white"
             >
               <span className="md:hidden">
                 {getLanguageAbbreviation(selectedLanguage)}
@@ -94,7 +94,7 @@ const LoginNavbar: React.FC = () => {
           <div className="relative">
             <button
               onClick={toggleLanguages}
-              className="hover:bg-purple-700 text-black transform transition-transform duration-500 py-2 px-4 rounded-md flex items-center text-sm md:text-base bg-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-purple-700 hover:text-white"
+              className="hover:bg-purple-700 text-black transition duration-500 py-2 px-4 rounded-md flex items-center text-sm md:text-base bg-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-purple-700 hover:text-white"
             >
               <span className="md:hidden">
                 {getLanguageAbbreviation(selectedLanguage)}

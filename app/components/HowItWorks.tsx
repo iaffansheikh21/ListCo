@@ -43,7 +43,7 @@ const HowItWorks: React.FC = () => {
             </div>
           </div>
           <div className="mt-10 flex justify-center">
-            <button className="px-6 py-2 border border-transparent transform transition-transform duration-500 text-base font-medium rounded-md text-white bg-purple-600 hover:bg-purple-700">
+            <button className="px-6 py-2 border border-transparent transition duration-500 text-base font-medium rounded-md text-white bg-purple-600 hover:bg-purple-900">
               Explore Listing
             </button>
           </div>

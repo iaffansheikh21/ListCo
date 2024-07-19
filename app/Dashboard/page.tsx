@@ -105,9 +105,12 @@ const Dashboard: React.FC = () => {
                 className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-700"
               />
             </div>
-            <button className="w-full px-4 py-2 font-medium text-white bg-purple-600 rounded-md hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
-              Update Profile
-            </button>
+          <button
+            type="submit"
+            className="bg-purple-600 text-white px-4 py-2 rounded-full hover:bg-purple-900 transition duration-500"
+          >
+            Update Profile
+          </button>
           </form>
         </div>
       </div>
