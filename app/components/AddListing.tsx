@@ -1,6 +1,12 @@
 'use client'
 import React, { useState } from 'react';
 
+// Define a type for a Service
+type Service = {
+  title: string;
+  description: string;
+};
+
 const AddListingPage: React.FC = () => {
   const [companyName, setCompanyName] = useState('');
   const [address, setAddress] = useState('');
@@ -9,11 +15,12 @@ const AddListingPage: React.FC = () => {
   const [businessDescription, setBusinessDescription] = useState('');
   const [website, setWebsite] = useState('');
   const [files, setFiles] = useState<FileList[]>([new DataTransfer().files]);
-  const [services, setServices] = useState([{ title: '', description: '' }]);
+  const [services, setServices] = useState<Service[]>([{ title: '', description: '' }]);
 
-  const handleServiceChange = (index: number, field: string, value: string) => {
+  // Update this function to use type assertion
+  const handleServiceChange = (index: number, field: keyof Service, value: string) => {
     const newServices = [...services];
-    newServices[index][field] = value;
+    newServices[index] = { ...newServices[index], [field]: value };
     setServices(newServices);
   };
 
