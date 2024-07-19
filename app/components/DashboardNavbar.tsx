@@ -4,24 +4,16 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faSignInAlt,
-  faSearch,
-  faCaretDown,
-  faBars,
-  faTimes,
-} from '@fortawesome/free-solid-svg-icons';
-import { useRouter } from 'next/navigation';
+import { faSignInAlt, faCaretDown, faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { useRouter, usePathname } from 'next/navigation';
 
 const DashboardNavbar: React.FC = () => {
-  const [isBlogOpen, setBlogOpen] = useState(false);
-  const [isPagesOpen, setPagesOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [showCategories, setShowCategories] = useState(false);
   const [showLanguages, setShowLanguages] = useState(false);
   const [selectedLanguage, setSelectedLanguage] = useState('Japanese');
   const router = useRouter();
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,10 +26,6 @@ const DashboardNavbar: React.FC = () => {
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
-  };
-
-  const toggleCategories = () => {
-    setShowCategories(!showCategories);
   };
 
   const toggleLanguages = () => {
@@ -71,36 +59,29 @@ const DashboardNavbar: React.FC = () => {
           isScrolled ? 'bg-slate-900' : 'bg-transparent'
         }`}
       >
+        <Link href={'/'}>
         <div className="flex items-center">
           <Image src="/logo.svg" alt="logo" width={140} height={140} />
         </div>
+        </Link>
 
         <div className="hidden md:flex md:items-center space-x-4">
           <Link href="/" passHref>
             <span className="hover:text-purple-300 cursor-pointer">Home</span>
           </Link>
           <Link href="/Categories" passHref>
-            <span className="hover:text-purple-300 cursor-pointer">
-              Categories
-            </span>
+            <span className="hover:text-purple-300 cursor-pointer">Categories</span>
           </Link>
           <Link href="/Blogs" passHref>
-            <span className="hover:text-purple-300 cursor-pointer">
-              Blogs
-            </span>
+            <span className="hover:text-purple-300 cursor-pointer">Blogs</span>
           </Link>
           <Link href="/Contact" passHref>
-            <span className="hover:text-purple-300 cursor-pointer">
-              Contact
-            </span>
+            <span className="hover:text-purple-300 cursor-pointer">Contact</span>
           </Link>
         </div>
 
         <div className="flex items-center md:hidden">
-          <button
-            onClick={toggleMenu}
-            className="text-white focus:outline-none mr-2"
-          >
+          <button onClick={toggleMenu} className="text-white focus:outline-none mr-2">
             <FontAwesomeIcon icon={faBars} size="lg" />
           </button>
           <div className="relative">
@@ -108,9 +89,7 @@ const DashboardNavbar: React.FC = () => {
               onClick={toggleLanguages}
               className="hover:bg-purple-700 text-black transform transition-transform duration-500 py-2 px-4 rounded-md flex items-center text-sm md:text-base bg-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-purple-600 hover:text-white"
             >
-              <span className="md:hidden">
-                {getLanguageAbbreviation(selectedLanguage)}
-              </span>
+              <span className="md:hidden">{getLanguageAbbreviation(selectedLanguage)}</span>
               <span className="hidden md:inline">{selectedLanguage}</span>
               <FontAwesomeIcon icon={faCaretDown} className="ml-2" />
             </button>
@@ -146,9 +125,7 @@ const DashboardNavbar: React.FC = () => {
               onClick={toggleLanguages}
               className="hover:bg-purple-700 text-black transition duration-500 py-2 px-4 rounded-md flex items-center text-sm md:text-base bg-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-purple-600 hover:text-white"
             >
-              <span className="md:hidden">
-                {getLanguageAbbreviation(selectedLanguage)}
-              </span>
+              <span className="md:hidden">{getLanguageAbbreviation(selectedLanguage)}</span>
               <span className="hidden md:inline">{selectedLanguage}</span>
               <FontAwesomeIcon icon={faCaretDown} className="ml-2" />
             </button>
@@ -173,50 +150,31 @@ const DashboardNavbar: React.FC = () => {
       </nav>
 
       {/* Sidebar Menu for Small Screens */}
-      <div
-        className={`${
-          isMenuOpen ? 'block' : 'hidden'
-        } md:hidden fixed inset-0 bg-gray-900 bg-opacity-150 z-50`}
-      >
+      <div className={`${isMenuOpen ? 'block' : 'hidden'} md:hidden fixed inset-0 bg-gray-900 bg-opacity-150 z-50`}>
         <div className="flex justify-between items-center py-4 px-8 text-white">
           <Image src="/logo.svg" alt="logo" width={140} height={140} />
-          <button
-            onClick={toggleMenu}
-            className="text-white focus:outline-none"
-          >
+          <button onClick={toggleMenu} className="text-white focus:outline-none">
             <FontAwesomeIcon icon={faTimes} size="lg" /> {/* Close (cross) icon */}
           </button>
         </div>
         <div className="flex flex-col items-start space-y-4 py-8 pl-8">
           <Link href="/" passHref>
-            <span
-              onClick={toggleMenu}
-              className="block py-2  text-white hover:text-purple-300 cursor-pointer"
-            >
+            <span onClick={toggleMenu} className="block py-2  text-white hover:text-purple-300 cursor-pointer">
               Home
             </span>
           </Link>
           <Link href="/Categories" passHref>
-            <span
-              onClick={toggleMenu}
-              className="block py-2 text-white hover:text-purple-300 cursor-pointer"
-            >
+            <span onClick={toggleMenu} className="block py-2 text-white hover:text-purple-300 cursor-pointer">
               Categories
             </span>
           </Link>
           <Link href="/Blogs" passHref>
-            <span
-              onClick={toggleMenu}
-              className="block py-2 text-white hover:text-purple-300 cursor-pointer"
-            >
+            <span onClick={toggleMenu} className="block py-2 text-white hover:text-purple-300 cursor-pointer">
               Blogs
             </span>
           </Link>
           <Link href="/Contact" passHref>
-            <span
-              onClick={toggleMenu}
-              className="block py-2 text-white hover:text-purple-300 cursor-pointer"
-            >
+            <span onClick={toggleMenu} className="block py-2 text-white hover:text-purple-300 cursor-pointer">
               Contact
             </span>
           </Link>
@@ -240,7 +198,7 @@ const DashboardNavbar: React.FC = () => {
       >
         <div className="text-center text-white mb-8 mt-4">
           <h1 className="text-5xl md:text-5xl font-bold mt-32">
-            Your Profile
+            {pathname === '/AddListing' ? 'Add Listing' : 'Your Profile'}
           </h1>
         </div>
       </section>

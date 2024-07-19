@@ -44,10 +44,11 @@ const LoginNavbar: React.FC = () => {
   return (
     <div className="sticky top-0 z-50">
       <nav className="bg-slate-900 w-full flex justify-between items-center py-4 px-8 text-white">
+        <Link href={'/'}>
         <div className="flex items-center">
           <Image src="/logo.svg" alt="logo" width={140} height={140} />
         </div>
-
+        </Link>
         <div className="hidden md:flex md:items-center space-x-4">
           <Link href="/" passHref>
             <span className="hover:text-purple-300 cursor-pointer">Home</span>

@@ -10,9 +10,9 @@ const Footer: React.FC = () => {
     <footer className="bg-white text-gray-700 py-6">
       <div className="container mx-auto text-center px-4">
         <div className="mb-4">
-           <a href="/">
+           <Link href="/">
                      <Image src="/logo.svg" alt="logo" width={140} height={140} />
-           </a>
+           </Link>
          
           <p className="text-sm mt-2">
             Users and submit their own items. You can create different packages and by connecting

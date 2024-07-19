@@ -71,10 +71,11 @@ const Navbar: React.FC = () => {
           isScrolled ? 'bg-slate-900' : 'bg-transparent'
         }`}
       >
+        <Link href={'/'}>
         <div className="flex items-center">
           <Image src="/logo.svg" alt="logo" width={140} height={140} />
         </div>
-
+        </Link>
         <div className="hidden md:flex md:items-center space-x-4">
           <Link href="/" passHref>
             <span className="hover:text-purple-300 cursor-pointer">Home</span>
