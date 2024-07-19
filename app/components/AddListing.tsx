@@ -14,10 +14,9 @@ const AddListingPage: React.FC = () => {
   const [email, setEmail] = useState('');
   const [businessDescription, setBusinessDescription] = useState('');
   const [website, setWebsite] = useState('');
-  const [files, setFiles] = useState<FileList[]>([new DataTransfer().files]);
+  const [files, setFiles] = useState<FileList[]>([]);
   const [services, setServices] = useState<Service[]>([{ title: '', description: '' }]);
 
-  // Update this function to use type assertion
   const handleServiceChange = (index: number, field: keyof Service, value: string) => {
     const newServices = [...services];
     newServices[index] = { ...newServices[index], [field]: value };
@@ -72,7 +71,6 @@ const AddListingPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-white flex items-center justify-center">
       <div className="bg-white p-8 shadow-sm rounded-lg mt-8 w-full max-w-7xl mb-2">
-        {/* <h1 className="text-2xl font-bold mb-6">Add Listing</h1> */}
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
@@ -168,15 +166,13 @@ const AddListingPage: React.FC = () => {
                 )}
               </div>
             ))}
-            {files.length > 0 && (
-              <button
-                type="button"
-                onClick={addFileInput}
-                className="mt-4 px-4 py-2 rounded-md bg-purple-600 hover:bg-purple-800 transition duration-400 text-white"
-              >
-                Add More Files
-              </button>
-            )}
+            <button
+              type="button"
+              onClick={addFileInput}
+              className="mt-4 px-4 py-2 rounded-md bg-purple-600 hover:bg-purple-800 transition duration-400 text-white"
+            >
+              Add More Files
+            </button>
           </div>
           <div>
             <label className="block text-md font-semibold text-gray-700">Services Offered</label>
@@ -216,15 +212,13 @@ const AddListingPage: React.FC = () => {
                 )}
               </div>
             ))}
-            {services.length > 0 && (
-              <button
-                type="button"
-                onClick={addService}
-                className="mt-4 bg-purple-600 text-white px-4 py-2 rounded-md hover:bg-purple-800 transition duration-400"
-              >
-                Add More Services
-              </button>
-            )}
+            <button
+              type="button"
+              onClick={addService}
+              className="mt-4 bg-purple-600 text-white px-4 py-2 rounded-md hover:bg-purple-800 transition duration-400"
+            >
+              Add More Services
+            </button>
           </div>
           <div>
             <button
