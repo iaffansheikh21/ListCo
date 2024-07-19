@@ -17,7 +17,7 @@ const ContactForm: React.FC = () => {
           <label htmlFor="comment" className="block text-gray-700">Comment</label>
           <textarea id="comment" className="w-full px-3 py-2 border border-gray-300 rounded-lg h-24"></textarea>
         </div>
-        <button type="submit" className="w-full bg-purple-500 text-white py-2 rounded-lg hover:bg-purple-700 transition duration-500">Send Message</button>
+        <button type="submit" className="w-full bg-purple-600 text-white py-2 rounded-lg hover:bg-purple-900 transition duration-500">Send Message</button>
       </form>
     </div>
   );

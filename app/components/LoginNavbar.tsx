@@ -3,12 +3,15 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch, faCaretDown, faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { faSignInAlt, faCaretDown, faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { useRouter, usePathname } from "next/navigation";
 
 const LoginNavbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showLanguages, setShowLanguages] = useState(false);
   const [selectedLanguage, setSelectedLanguage] = useState("Japanese");
+  const router = useRouter();
+  const pathname = usePathname();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -32,6 +35,10 @@ const LoginNavbar: React.FC = () => {
       default:
         return language;
     }
+  };
+
+  const handleLoginClick = () => {
+    router.push('/LoginPage');
   };
 
   return (
@@ -91,6 +98,15 @@ const LoginNavbar: React.FC = () => {
         </div>
 
         <div className="hidden md:flex items-center space-x-4">
+          {pathname !== '/LoginPage' && (
+            <button
+              className="bg-purple-600 hover:bg-purple-800 transition duration-500 text-white py-2 px-4 rounded-md flex items-center text-sm md:text-base"
+              onClick={handleLoginClick}
+            >
+              <FontAwesomeIcon icon={faSignInAlt} className="mr-2" />
+              Log In
+            </button>
+          )}
           <div className="relative">
             <button
               onClick={toggleLanguages}
@@ -153,6 +169,15 @@ const LoginNavbar: React.FC = () => {
               Contact
             </span>
           </Link>
+          {pathname !== '/LoginPage' && (
+            <button
+              className="bg-purple-600 hover:bg-purple-700 text-white transition duration-500 py-2 px-4 rounded-md flex items-center text-sm md:text-base"
+              onClick={handleLoginClick}
+            >
+              <FontAwesomeIcon icon={faSignInAlt} className="mr-2" />
+              Log In
+            </button>
+          )}
         </div>
       </div>
     </div>

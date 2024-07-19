@@ -4,7 +4,7 @@ import Link from 'next/link';
 const LoginForm: React.FC = () => {
   return (
       <div className="flex flex-col items-center justify-start flex-grow mt-6">
-        <div className="w-full max-w-md p-6 bg-purple-100 rounded-lg shadow-md">
+        <div className="w-full max-w-md p-6 bg-white rounded-lg shadow-2xl">
           <h2 className="text-2xl font-bold text-center text-primary mb-4">Login</h2>
           <form className="space-y-4">
             <div>
