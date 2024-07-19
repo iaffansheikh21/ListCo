@@ -14,7 +14,7 @@ const AddListingPage: React.FC = () => {
   const [email, setEmail] = useState('');
   const [businessDescription, setBusinessDescription] = useState('');
   const [website, setWebsite] = useState('');
-  const [files, setFiles] = useState<FileList[]>([]);
+  const [files, setFiles] = useState<(FileList | null)[]>([null]);
   const [services, setServices] = useState<Service[]>([{ title: '', description: '' }]);
 
   const handleServiceChange = (index: number, field: keyof Service, value: string) => {
@@ -35,15 +35,13 @@ const AddListingPage: React.FC = () => {
   };
 
   const handleFileChange = (index: number, newFiles: FileList | null) => {
-    if (newFiles) {
-      const newFilesList = [...files];
-      newFilesList[index] = newFiles;
-      setFiles(newFilesList);
-    }
+    const newFilesList = [...files];
+    newFilesList[index] = newFiles;
+    setFiles(newFilesList);
   };
 
   const addFileInput = () => {
-    setFiles([...files, new DataTransfer().files]);
+    setFiles([...files, null]);
   };
 
   const removeFileInput = (index: number) => {
@@ -55,7 +53,6 @@ const AddListingPage: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
     console.log({
       companyName,
       address,
@@ -179,7 +176,7 @@ const AddListingPage: React.FC = () => {
             {services.map((service, index) => (
               <div key={index} className="space-y-2">
                 <div>
-                  <label htmlFor={`serviceTitle-${index}`} className="block text-sm font-medium ">
+                  <label htmlFor={`serviceTitle-${index}`} className="block text-sm font-medium text-gray-700">
                     Title
                   </label>
                   <input
