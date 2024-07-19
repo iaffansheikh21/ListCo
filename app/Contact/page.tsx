@@ -1,12 +1,15 @@
 import React from 'react'
-import ContactForm from '../components/ContactUs'
+import ContactUs from '../components/ContactUs'
 import LoginNavbar from '../components/LoginNavbar'
+import ContactForm from '../components/ContactForm'
+
 
 export default function page() {
   return (
     <>
     <LoginNavbar/>
-    <ContactForm />
+    <ContactUs />
+    {/* <ContactForm/> */}
     </>
   )
 }
