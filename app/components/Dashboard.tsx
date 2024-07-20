@@ -1,11 +1,16 @@
 'use client'
 
 import { useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 const Dashboard: React.FC = () => {
     const [users, setUsers] = useState<any[]>([]); // For list of logged-in users
     const [currentUser, setCurrentUser] = useState<any>(null); // For the current user
     const [view, setView] = useState<'profile' | 'listings'>('profile'); // To manage the current view
+    const router = useRouter(); // For navigation
+    const handleEditClick = () => {
+        router.push('/edit-listing');
+    };
 
     useEffect(() => {
         const fetchLoggedInUsers = async () => {
@@ -130,13 +135,21 @@ const Dashboard: React.FC = () => {
                             </>
                         ) : (
                             <>
+                                <div className='flex items-center justify-between mb-4'>
                                 <h2 className="text-2xl font-bold mb-4">Listings</h2>
+                                <button
+                                    type="submit"
+                                    onClick={handleEditClick}
+                                    className='bg-purple-600 text-white px-4 py-2 rounded-md hover:bg-purple-800 transition duration-500'
+                                >
+                                    Edit Listing
+                                </button>
+                                </div>
                                 <div className="bg-white p-6 rounded-lg shadow-xl">
                                     <div className="hidden md:block overflow-x-auto">
                                         <table className="min-w-full bg-white">
                                             <thead>
                                                 <tr>
-                                                    <th className="py-2 px-4 border-b-2 border-gray-300 text-left">Listing ID</th>
                                                     <th className="py-2 px-4 border-b-2 border-gray-300 text-left">Title</th>
                                                     <th className="py-2 px-4 border-b-2 border-gray-300 text-left">Description</th>
                                                     <th className="py-2 px-4 border-b-2 border-gray-300 text-left">Actions</th>
@@ -145,7 +158,6 @@ const Dashboard: React.FC = () => {
                                             <tbody>
                                                 {/* Replace with actual listings data */}
                                                 <tr>
-                                                    <td className="py-2 px-4 border-b border-gray-300">1</td>
                                                     <td className="py-2 px-4 border-b border-gray-300">Listing Title 1</td>
                                                     <td className="py-2 px-4 border-b border-gray-300">Description 1</td>
                                                     <td className="py-2 px-4 border-b border-gray-300">

@@ -52,6 +52,17 @@ const DashboardNavbar: React.FC = () => {
     router.push('/login');
   };
 
+  const getPageTitle = () => {
+    switch (pathname) {
+      case '/add-listing':
+        return 'Add Listing';
+      case '/edit-listing':
+        return 'Edit Listing';
+      default:
+        return 'Your Profile';
+    }
+  };
+
   return (
     <div className="relative">
       <nav
@@ -197,8 +208,8 @@ const DashboardNavbar: React.FC = () => {
         }}
       >
         <div className="text-center text-white mb-8 mt-4">
-          <h1 className="text-5xl md:text-5xl font-bold mt-32">
-            {pathname === '/add-listing' ? 'Add Listing' : 'Your Profile'}
+          <h1 className="text-5xl md:text-5xl font-serif font-bold mt-32">
+            {getPageTitle()}
           </h1>
         </div>
       </section>
