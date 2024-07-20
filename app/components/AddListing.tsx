@@ -158,7 +158,7 @@ const AddListingPage: React.FC = () => {
                     onClick={() => removeFileInput(index)}
                     className="text-red-500 text-sm"
                   >
-                    Remove Files
+                    Remove File
                   </button>
                 )}
               </div>
@@ -175,6 +175,7 @@ const AddListingPage: React.FC = () => {
             <label className="block text-md font-semibold text-gray-700">Services Offered</label>
             {services.map((service, index) => (
               <div key={index} className="space-y-2">
+                <h6 className="text-sm font-semibold text-gray-700">Service {index + 1}</h6>
                 <div>
                   <label htmlFor={`serviceTitle-${index}`} className="block text-sm font-medium text-gray-700">
                     Title
