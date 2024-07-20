@@ -61,7 +61,7 @@ const Navbar: React.FC = () => {
   };
 
   const handleLoginClick = () => {
-    router.push('/LoginPage');
+    router.push('/login');
   };
 
   return (
@@ -80,17 +80,17 @@ const Navbar: React.FC = () => {
           <Link href="/" passHref>
             <span className="hover:text-purple-300 cursor-pointer">Home</span>
           </Link>
-          <Link href="/Categories" passHref>
+          <Link href="/categories" passHref>
             <span className="hover:text-purple-300 cursor-pointer">
               Categories
             </span>
           </Link>
-          <Link href="/Blogs" passHref>
+          <Link href="/blogs" passHref>
             <span className="hover:text-purple-300 cursor-pointer">
               Blogs
             </span>
           </Link>
-          <Link href="/Contact" passHref>
+          <Link href="/contact" passHref>
             <span className="hover:text-purple-300 cursor-pointer">
               Contact
             </span>
@@ -197,7 +197,7 @@ const Navbar: React.FC = () => {
               Home
             </span>
           </Link>
-          <Link href="/Categories" passHref>
+          <Link href="/categories" passHref>
             <span
               onClick={toggleMenu}
               className="block py-2 text-white hover:text-purple-300 cursor-pointer"
@@ -205,7 +205,7 @@ const Navbar: React.FC = () => {
               Categories
             </span>
           </Link>
-          <Link href="/Blogs" passHref>
+          <Link href="/blogs" passHref>
             <span
               onClick={toggleMenu}
               className="block py-2 text-white hover:text-purple-300 cursor-pointer"
@@ -213,7 +213,7 @@ const Navbar: React.FC = () => {
               Blogs
             </span>
           </Link>
-          <Link href="/Contact" passHref>
+          <Link href="/contact" passHref>
             <span
               onClick={toggleMenu}
               className="block py-2 text-white hover:text-purple-300 cursor-pointer"

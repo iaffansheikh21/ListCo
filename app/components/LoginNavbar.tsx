@@ -53,13 +53,13 @@ const LoginNavbar: React.FC = () => {
           <Link href="/" passHref>
             <span className="hover:text-purple-300 cursor-pointer">Home</span>
           </Link>
-          <Link href="/Categories" passHref>
+          <Link href="/categories" passHref>
             <span className="hover:text-purple-300 cursor-pointer">Categories</span>
           </Link>
-          <Link href="/Blogs" passHref>
+          <Link href="/blogs" passHref>
             <span className="hover:text-purple-300 cursor-pointer">Blogs</span>
           </Link>
-          <Link href="/Contact" passHref>
+          <Link href="/contact" passHref>
             <span className="hover:text-purple-300 cursor-pointer">Contact</span>
           </Link>
         </div>
@@ -155,22 +155,22 @@ const LoginNavbar: React.FC = () => {
               Home
             </span>
           </Link>
-          <Link href="/Categories" passHref>
+          <Link href="/categories" passHref>
             <span onClick={toggleMenu} className="block py-2 text-white hover:text-purple-300 cursor-pointer">
               Categories
             </span>
           </Link>
-          <Link href="/Blogs" passHref>
+          <Link href="/blogs" passHref>
             <span onClick={toggleMenu} className="block py-2 text-white hover:text-purple-300 cursor-pointer">
               Blogs
             </span>
           </Link>
-          <Link href="/Contact" passHref>
+          <Link href="/contact" passHref>
             <span onClick={toggleMenu} className="block py-2 text-white hover:text-purple-300 cursor-pointer">
               Contact
             </span>
           </Link>
-          {pathname !== '/LoginPage' && (
+          {pathname !== '/login' && (
             <button
               className="bg-purple-600 hover:bg-purple-700 text-white transition duration-500 py-2 px-4 rounded-md flex items-center text-sm md:text-base"
               onClick={handleLoginClick}

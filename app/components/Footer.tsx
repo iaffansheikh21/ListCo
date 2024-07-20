@@ -37,13 +37,11 @@ const Footer: React.FC = () => {
           <p className="space-y-2 md:space-y-0 md:flex md:justify-center md:space-x-2">
             <Link href="/" legacyBehavior><a className="hover:underline">Home</a></Link>
             <span>|</span>
-            <Link href="/Categories" legacyBehavior><a className="hover:underline">Categories</a></Link>
-            {/* <span>|</span> */}
-            {/* <Link href="/pages" legacyBehavior><a className="hover:underline">Pages</a></Link> */}
+            <Link href="/categories" legacyBehavior><a className="hover:underline">Categories</a></Link>
             <span>|</span>
-            <Link href="/Blogs" legacyBehavior><a className="hover:underline">Blogs</a></Link>
+            <Link href="/blogs" legacyBehavior><a className="hover:underline">Blogs</a></Link>
             <span>|</span>
-            <Link href="/Contact" legacyBehavior><a className="hover:underline">Contact</a></Link>
+            <Link href="/contact" legacyBehavior><a className="hover:underline">Contact</a></Link>
           </p>
         </div>
         <div className="text-xs text-gray-500 mt-4">

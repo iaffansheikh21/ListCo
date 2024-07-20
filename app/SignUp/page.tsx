@@ -1,11 +1,11 @@
 import React from 'react';
 import Link from 'next/link';
-import LoginNavbar from '../components/LoginNavbar';
+import LoginNav from '../components/LoginNavbar';
 
 const SignupPage: React.FC = () => {
   return (
     <div className="min-h-screen flex flex-col">
-      <LoginNavbar />
+      <LoginNav />
       <div className="flex flex-col items-center justify-center flex-grow bg-white mt-6">
         <div className="w-full max-w-md p-6 bg-white rounded-lg shadow-2xl">
           <h2 className="text-2xl font-bold text-center text-primary mb-4">Sign Up</h2>
@@ -73,7 +73,7 @@ const SignupPage: React.FC = () => {
           </form>
           <div className="text-sm text-center text-gray-600 mt-4">
             Already have an account?{' '}
-            <Link href="/LoginPage" legacyBehavior>
+            <Link href="/login" legacyBehavior>
               <a className="font-medium text-primary hover:text-secondary">Login</a>
             </Link>
           </div>

@@ -32,7 +32,7 @@ const LoginForm: React.FC = () => {
               />
             </div>
             <div>
-              <Link href={'/Dashboard'}>
+              <Link href={'/dashboard'}>
               <button
                 type="submit"
                 className="w-full px-4 py-2 font-medium text-white bg-purple-600 rounded-md hover:bg-purple-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition duration-500"
@@ -44,7 +44,7 @@ const LoginForm: React.FC = () => {
           </form>
           <div className="text-sm text-center text-gray-600 mt-4">
             Don&apos;t have an account?{' '}
-            <Link href="/SignUp" legacyBehavior>
+            <Link href="/signup" legacyBehavior>
               <a className="font-medium text-primary hover:text-secondary">Sign Up</a>
             </Link>
           </div>

@@ -49,7 +49,7 @@ const DashboardNavbar: React.FC = () => {
   };
 
   const handleLoginClick = () => {
-    router.push('/LoginPage');
+    router.push('/login');
   };
 
   return (
@@ -69,13 +69,13 @@ const DashboardNavbar: React.FC = () => {
           <Link href="/" passHref>
             <span className="hover:text-purple-300 cursor-pointer">Home</span>
           </Link>
-          <Link href="/Categories" passHref>
+          <Link href="/categories" passHref>
             <span className="hover:text-purple-300 cursor-pointer">Categories</span>
           </Link>
-          <Link href="/Blogs" passHref>
+          <Link href="/blogs" passHref>
             <span className="hover:text-purple-300 cursor-pointer">Blogs</span>
           </Link>
-          <Link href="/Contact" passHref>
+          <Link href="/contact" passHref>
             <span className="hover:text-purple-300 cursor-pointer">Contact</span>
           </Link>
         </div>
@@ -163,17 +163,17 @@ const DashboardNavbar: React.FC = () => {
               Home
             </span>
           </Link>
-          <Link href="/Categories" passHref>
+          <Link href="/categories" passHref>
             <span onClick={toggleMenu} className="block py-2 text-white hover:text-purple-300 cursor-pointer">
               Categories
             </span>
           </Link>
-          <Link href="/Blogs" passHref>
+          <Link href="/blogs" passHref>
             <span onClick={toggleMenu} className="block py-2 text-white hover:text-purple-300 cursor-pointer">
               Blogs
             </span>
           </Link>
-          <Link href="/Contact" passHref>
+          <Link href="/contact" passHref>
             <span onClick={toggleMenu} className="block py-2 text-white hover:text-purple-300 cursor-pointer">
               Contact
             </span>
@@ -198,7 +198,7 @@ const DashboardNavbar: React.FC = () => {
       >
         <div className="text-center text-white mb-8 mt-4">
           <h1 className="text-5xl md:text-5xl font-bold mt-32">
-            {pathname === '/AddListing' ? 'Add Listing' : 'Your Profile'}
+            {pathname === '/add-listing' ? 'Add Listing' : 'Your Profile'}
           </h1>
         </div>
       </section>
