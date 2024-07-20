@@ -142,7 +142,7 @@ const Dashboard: React.FC = () => {
                                     onClick={handleEditClick}
                                     className='bg-purple-600 text-white px-4 py-2 rounded-md hover:bg-purple-800 transition duration-500'
                                 >
-                                    Edit Listing
+                                    Add Listing
                                 </button>
                                 </div>
                                 <div className="bg-white p-6 rounded-lg shadow-xl">

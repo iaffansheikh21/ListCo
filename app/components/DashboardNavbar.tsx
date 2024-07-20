@@ -57,7 +57,7 @@ const DashboardNavbar: React.FC = () => {
       case '/add-listing':
         return 'Add Listing';
       case '/edit-listing':
-        return 'Edit Listing';
+        return 'Add Listing';
       default:
         return 'Your Profile';
     }
