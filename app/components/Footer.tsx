@@ -2,7 +2,8 @@
 "use client"
 import React from 'react';
 import Link from 'next/link';
-import { FaTwitter, FaFacebook, FaGithub, FaInstagram } from 'react-icons/fa';
+import { FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa';
+import { FaXTwitter } from "react-icons/fa6";
 import Image from 'next/image'
 
 const Footer: React.FC = () => {
@@ -20,16 +21,16 @@ const Footer: React.FC = () => {
           </p>
         </div>
         <div className="flex justify-center space-x-4 mb-4">
-          <a href="#" className="text-purple-500 hover:text-purple-700">
-            <FaTwitter size={24} />
+          <a href="https://x.com/iaffansheikh21" className="text-purple-500 hover:text-purple-700">
+            <FaXTwitter size={24} />
           </a>
-          <a href="#" className="text-purple-500 hover:text-purple-700">
-            <FaFacebook size={24} />
+          <a href="https://www.linkedin.com/in/muhammad-affan-sheikh-587330250/" className="text-purple-500 hover:text-purple-700">
+            <FaLinkedin size={24} />
           </a>
           <a href="https://github.com/iaffansheikh21" className="text-purple-500 hover:text-purple-700">
             <FaGithub size={24} />
           </a>
-          <a href="#" className="text-purple-500 hover:text-purple-700">
+          <a href="https://www.instagram.com/iaffansheikh21" className="text-purple-500 hover:text-purple-700">
             <FaInstagram size={24} />
           </a>
         </div>
@@ -45,7 +46,7 @@ const Footer: React.FC = () => {
           </p>
         </div>
         <div className="text-xs text-gray-500 mt-4">
-          <p>&copy; 2024 All rights reserved | This template is made with <span className="text-purple-500">💜</span> by Colorlib</p>
+          <p>&copy; 2024 All rights reserved</p>
         </div>
       </div>
     </footer>
